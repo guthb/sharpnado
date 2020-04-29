@@ -6,6 +6,25 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
+            var x = 34.1;
+            var y = 10.3;
+            //var result = x + y;
+            Console.WriteLine(result);
+            var numbers = new double[3];
+
+            numbers[0] = 12.7;
+            numbers[1] = 10.3;
+            numbers[2] = 6.11;
+
+            var result = numbers[0];
+            result = result + numbers[1];
+            result = result + numbers[2];
+            Console.WriteLine(result);
+
+
+
+
+
             if (args.Length > 0)
             {
                 Console.WriteLine($"Hello {args[0]}!");
