@@ -2,7 +2,7 @@ namespace GradeBook
 {
     public class Book
     {
-        public void AddGrade(double arg)
+        public void AddGrade(double grade)
         {
 
         }
