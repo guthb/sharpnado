@@ -3,16 +3,8 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
-
-    class Book
-    {
-
-    }
-
     class Program
     {
-
-        var book = new GradeBook();
         static void Main(string[] args)
         {
             var grades = new List<double>() { 12.7, 10.3, 6.11, 4.1 };
