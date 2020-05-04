@@ -11,12 +11,15 @@ namespace GradeBook.Tests
         {
             // arrange
             var book = new Book("");
-
+            book.AddGrade(89.1);
+            book.AddGrade(90.5);
+            book.AddGrade(77.1);
 
             //act
-
+            var result = book.ShowStatistics();
 
             //assert
+            Assert.Equal(85.6, result.Average);
 
 
 
