@@ -8,7 +8,7 @@ namespace GradeBook
         public Book(string name)
         {
             grades = new List<double>();
-            this.name = name;
+            Name = name; //lowercase parameter
         }
 
         public void AddGrade(double grade)
@@ -40,6 +40,6 @@ namespace GradeBook
 
         //field
         private List<double> grades;
-        private string name;
+        public string Name; //Public members are upper case
     }
 }
