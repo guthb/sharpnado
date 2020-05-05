@@ -3,17 +3,26 @@ using Xunit;
 
 namespace GradeBook.Tests
 {
-    public class TypeTest
+    public class TypeTests
 
     {
         [Fact]
-        public void TestName()
+        public void Test1()
         {
             //Given
-
+            var book1 = GetBook("Book 1");
+            SetName(book1, "New Name");
             //When
 
+
             //Then
+            Assert.Equal("New Name", book1.Name);
+
+        }
+
+        private void SetName(Book book, string name)
+        {
+            book.Name = name;
         }
 
         [Fact]
@@ -41,8 +50,7 @@ namespace GradeBook.Tests
             //assert
             Assert.Equal("Book 1", book1.Name);
             Assert.Equal("Book 2", book2.Name);
-            Assert.NotSame(book1, book2)
-
+            Assert.NotSame(book1, book2);
 
         }
 
