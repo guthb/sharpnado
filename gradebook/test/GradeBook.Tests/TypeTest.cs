@@ -16,8 +16,8 @@ namespace GradeBook.Tests
 
 
             //assert
-            Assert.Equal("", book1.Name);
-            Assert.Equal("", book2.Name);
+            Assert.Equal("Book 1", book1.Name);
+            Assert.Equal("Book 2", book2.Name);
 
         }
 
@@ -26,3 +26,4 @@ namespace GradeBook.Tests
             return new Book(name);
         }
     }
+}
