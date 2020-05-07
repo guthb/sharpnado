@@ -7,7 +7,7 @@ namespace GradeBook.Tests
 
     {
         [Fact]
-        public void Test1()
+        public void CanSetNameFromRefernce()
         {
             //Given
             var book1 = GetBook("Book 1");
@@ -26,7 +26,7 @@ namespace GradeBook.Tests
         }
 
         [Fact]
-        public void GetBookReturnsSameVaribleValue()
+        public void TwoVarsCanRefernceSameObject()
         {
             // arrange
             var book1 = GetBook("Book 1");
@@ -39,7 +39,7 @@ namespace GradeBook.Tests
 
         }
         [Fact]
-        public void GetBookRetrunDifferentObjects()
+        public void GetBookReturnsDifferentObjects()
         {
             var book1 = GetBook("Book 1");
             var book2 = GetBook("Book 2");
