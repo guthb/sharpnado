@@ -6,8 +6,24 @@ namespace GradeBook.Tests
     public class TypeTests
 
     {
+
         [Fact]
-        public void Test1()
+        public void ValuePassedByRefernce()
+        {
+            var x = GetInt();
+            SetInt(ref x);
+
+            Assert.Equal(42, x);
+        }
+
+        private void SetInt(ref int z)
+        {
+            z = 42;
+        }
+
+
+        [Fact]
+        public void ValueTypesAlsoPassByValue()
         {
             var x = GetInt();
             SetInt(x);
