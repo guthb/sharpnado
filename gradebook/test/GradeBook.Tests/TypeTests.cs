@@ -8,6 +8,19 @@ namespace GradeBook.Tests
     {
 
         [Fact]
+        public void Test1()
+        {
+            var x = GetInt();
+
+            Assert.Equal(3, x);
+        }
+
+        private object GetInt()
+        {
+            return 3;
+        }
+
+        [Fact]
         public void CSharepCanPassRef()
         {
             //Given
