@@ -3,9 +3,24 @@ using Xunit;
 
 namespace GradeBook.Tests
 {
+
     public class TypeTests
 
     {
+
+        [Fact]
+        public void StringsBehaveLikeValueTypes()
+        {
+            string name = "jackass";
+            var upper = MakeUpperCase(name);
+
+            Assert.Equal("JACKASS", upper);
+        }
+
+        private string MakeUpperCase(string parameter)
+        {
+            return parameter.ToUpper();
+        }
 
         [Fact]
         public void ValuePassedByRefernce()
