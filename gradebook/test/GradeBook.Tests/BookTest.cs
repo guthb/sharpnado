@@ -24,5 +24,20 @@ namespace GradeBook.Tests
             Assert.Equal(77.1, result.Low, 1);
 
         }
+
+
+
+        [Fact]
+        public void BookChecksGradeValueBeforeAdd()
+        {
+            //Given
+
+
+
+            //When
+
+
+            //Then
+        }
     }
 }

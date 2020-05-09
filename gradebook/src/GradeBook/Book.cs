@@ -33,19 +33,20 @@ namespace GradeBook
             result.High = double.MinValue;
             result.Low = double.MaxValue;
 
-            foreach (var grade in grades)
+            var index = 0;
+            do
             {
                 // if(number > highGrade){
                 //     highGrade = number
                 // }or...
-                result.Low = Math.Min(grade, result.Low);
-                result.High = Math.Max(grade, result.High);
-                result.Average += grade;
-
-            }
+                result.Low = Math.Min(grades[index], result.Low);
+                result.High = Math.Max(grades[index], result.High);
+                result.Average += grades[index];
+                index++;
+            } while ( )
             result.Average /= grades.Count;
-
             return result;
+
         }
 
         //field
