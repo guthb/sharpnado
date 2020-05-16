@@ -92,9 +92,6 @@ namespace GradeBook
 
         //field
         private List<double> grades;
-
-
-
         // public string Name; //Public members are upper case
 
         //longhand get set
@@ -109,11 +106,12 @@ namespace GradeBook
             //     if (!String.IsNullOrEmpty(value))
             //         name = value;
             // }
-            get; set;
+            get;
+            private set;
         }
 
+        //private string name;
 
 
-        private string name;
     }
 }
