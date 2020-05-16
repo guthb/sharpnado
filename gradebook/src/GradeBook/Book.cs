@@ -12,27 +12,27 @@ namespace GradeBook
         }
 
 
-        // public void AddLetterGrade(char letter)
-        // {
-        //     switch (letter)
-        //     {
-        //         case 'A':
-        //             AddGrade(90);
-        //             break;
+        public void AddGrade(char letter)
+        {
+            switch (letter)
+            {
+                case 'A':
+                    AddGrade(90);
+                    break;
 
-        //         case 'B':
-        //             AddGrade(80);
-        //             break;
+                case 'B':
+                    AddGrade(80);
+                    break;
 
-        //         case 'C':
-        //             AddGrade(70);
-        //             break;
+                case 'C':
+                    AddGrade(70);
+                    break;
 
-        //         default:
-        //             AddGrade(0);
-        //             break;
-        //     }
-        // }
+                default:
+                    AddGrade(0);
+                    break;
+            }
+        }
 
         public void AddGrade(double grade)
         {
@@ -92,6 +92,25 @@ namespace GradeBook
 
         //field
         private List<double> grades;
-        public string Name; //Public members are upper case
+
+
+
+        // public string Name; //Public members are upper case
+
+        //longhand get set
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                if (!String.IsNullOrEmpty(value))
+                    name = value;
+            }
+        }
+
+        private string name;
     }
 }
