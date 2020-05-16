@@ -100,16 +100,19 @@ namespace GradeBook
         //longhand get set
         public string Name
         {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                if (!String.IsNullOrEmpty(value))
-                    name = value;
-            }
+            // get
+            // {
+            //     return name;
+            // }
+            // set
+            // {
+            //     if (!String.IsNullOrEmpty(value))
+            //         name = value;
+            // }
+            get; set;
         }
+
+
 
         private string name;
     }
