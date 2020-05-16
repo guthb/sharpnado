@@ -8,9 +8,28 @@ namespace GradeBook
         static void Main(string[] args)
         {
             var book = new Book("big old gradebook");
-            book.AddGrade(89.1);
-            book.AddGrade(90.5);
-            book.AddGrade(77.5);
+            // book.AddGrade(89.1);
+            // book.AddGrade(90.5);
+            // book.AddGrade(77.5);
+            var done = false;
+
+            while (!done)
+            {
+                Console.WriteLine("Enter a grade or 'q' to quit");
+                var input = Console.ReadLine();
+                if (input == "q")
+                {
+                    done = true;
+                    continue;
+                }
+
+                var grade = double.Parse(input);
+                book.AddGrade(grade);
+
+
+
+            }
+
             var stats = book.GetStatistics();
 
 
