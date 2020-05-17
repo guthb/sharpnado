@@ -112,6 +112,8 @@ namespace GradeBook
 
         //private string name;
 
+        readonly string category = "Science";
+
 
     }
 }
