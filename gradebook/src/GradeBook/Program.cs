@@ -8,6 +8,11 @@ namespace GradeBook
         static void Main(string[] args)
         {
             var book = new Book("big old gradebook");
+            book.GradeAdded += OnGradeAdded;
+            book.GradeAdded += OnGradeAdded;
+            book.GradeAdded -= OnGradeAdded;
+            book.GradeAdded += OnGradeAdded;
+
             var done = false;
 
             while (!done)
@@ -35,7 +40,7 @@ namespace GradeBook
                 }
                 catch (FormatException ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine("**");
 
                 }
 
@@ -54,5 +59,12 @@ namespace GradeBook
             Console.WriteLine($"The letter grade is {stats.Letter}");
 
         }
+
+        static void OnGradeAdded(object sender, EventArgs e)
+        {
+            Console.WriteLine("A grade was added");
+        }
+
+
     }
 }
