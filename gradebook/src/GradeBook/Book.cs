@@ -107,7 +107,7 @@ namespace GradeBook
             //         name = value;
             // }
             get;
-            private set;
+            set;
         }
 
         //private string name;
