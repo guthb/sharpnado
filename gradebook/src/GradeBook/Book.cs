@@ -5,8 +5,17 @@ namespace GradeBook
 {
     public delegate void GradeAddedDelegate(object sender, EventArgs args);
 
+    public class NamedObject
+    {
+        public string Name
+        {
+            get;
+            set;
+        }
+    }
 
-    public class Book
+
+    public class Book : NamedObject
     {
         public Book(string name)
         {
@@ -104,12 +113,6 @@ namespace GradeBook
         // public string Name; //Public members are upper case
 
         //longhand get set
-        public string Name
-        {
-
-            get;
-            set;
-        }
 
         //private string name;
 
