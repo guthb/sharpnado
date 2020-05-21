@@ -24,7 +24,7 @@ namespace GradeBook
 
         }
 
-        private static bool EnterGrades(Book book)
+        private static bool EnterGrades(IBook book)
         {
             while (true)
             {
