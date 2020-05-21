@@ -2,7 +2,13 @@ namespace GradeBook
 {
     public class Statistics
     {
-        public double Average;
+        public double Average
+        {
+            get
+            {
+                return Sum / Count;
+            }
+        }
         public double High;
         public double Low;
         public char Letter;
