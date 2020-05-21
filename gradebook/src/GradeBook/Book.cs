@@ -36,14 +36,12 @@ namespace GradeBook
 
         }
 
-        public virtual event GradeAddedDelegate GradeAdded;
+        public abstract event GradeAddedDelegate GradeAdded;
 
         public abstract void AddGrade(double grade);
 
-        public virtual Statistics GetStatistics()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract Statistics GetStatistics();
+
     }
 
     public class InMemoryBook : Book
@@ -148,7 +146,25 @@ namespace GradeBook
         //private string name;
 
         public const string CATEGORY = "Science";
+    }
 
 
+    public class DiskBook : Book
+    {
+        public DiskBook(string name) : base(name)
+        {
+        }
+
+        public override event GradeAddedDelegate GradeAdded;
+
+        public override void AddGrade(double grade)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Statistics GetStatistics()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
