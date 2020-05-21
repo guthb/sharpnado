@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace GradeBook
 {
@@ -159,7 +160,8 @@ namespace GradeBook
 
         public override void AddGrade(double grade)
         {
-            throw new NotImplementedException();
+            var writer = File.AppendText($"{Name}.txt");
+            writer.WriteLine(grade);
         }
 
         public override Statistics GetStatistics()
