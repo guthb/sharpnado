@@ -1,3 +1,5 @@
+using System;
+
 namespace GradeBook
 {
     public class Statistics
@@ -19,12 +21,14 @@ namespace GradeBook
         {
             Sum += number;
             Count += 1;
+
+            Low = Math.Min(number, Low);
+            High = Math.Max(number, High);
         }
 
         public Statistics()
         {
             Count = 0;
-            Average = 0.0;
             High = double.MinValue;
             Low = double.MaxValue;
 
