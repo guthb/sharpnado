@@ -34,7 +34,6 @@ namespace GradeBook
 
         public Book(string name) : base(name)
         {
-
         }
 
         public abstract event GradeAddedDelegate GradeAdded;
