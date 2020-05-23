@@ -8,9 +8,8 @@ namespace GradeBook
         static void Main(string[] args)
         {
 
-            Book book = null;
 
-            //IBook book = new DiskBook("local gradebook");
+            IBook book = new DiskBook("local gradebook");
             book.GradeAdded += OnGradeAdded;
 
 
