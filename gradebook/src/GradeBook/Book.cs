@@ -89,7 +89,7 @@ namespace GradeBook
     {
         public InMemoryBook(string name) : base(name)
         {
-            grades = new List<double>();
+            //grades = new List<double>();
             Name = name; //lowercase parameter
         }
 
