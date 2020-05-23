@@ -89,7 +89,7 @@ namespace GradeBook
     {
         public InMemoryBook(string name) : base(name)
         {
-            //grades = new List<double>();
+            grades = new List<double>();
             Name = name; //lowercase parameter
         }
 
@@ -152,7 +152,6 @@ namespace GradeBook
 
         //field
         private List<double> grades;
-        // public string Name; //Public members are upper case
 
         //longhand get set
 
