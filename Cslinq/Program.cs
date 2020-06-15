@@ -13,6 +13,12 @@ namespace Cslinq
             {
                 Console.WriteLine(city);
             }
+
+            DateTime date = new DateTime(2020, 6, 16);
+            int daysTillEndOfMonth = date.DaysToEndOfMonth();
+
+            Console.WriteLine(daysTillEndOfMonth);
+
         }
     }
 
