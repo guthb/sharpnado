@@ -10,7 +10,9 @@ namespace Cslinq
             IEnumeral<string> cites = new[] { "Ghent", "London", "Las Vegas", "Hyderbad" };
 
 
-            foreach (var city in cities)
+            IEnumeral<string> query = cites.StringsThatStartWith("L");
+
+            foreach (var city in query)
             {
                 Console.WriteLine(city);
             }
