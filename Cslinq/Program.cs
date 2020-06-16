@@ -23,10 +23,11 @@ namespace Cslinq
     }
 
     public static class DateUtilites
-
-        public static int DaysToEndOfMonth(DateTime date)
     {
-        return DateTime.DaysToEndOfMonth(date.Year, date.Month) - date.Day;
+        public static int DaysToEndOfMonth(this DateTime date)
+        {
+            return DateTime.DaysToEndOfMonth(date.Year, date.Month) - date.Day;
+        }
     }
 
 }
