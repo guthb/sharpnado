@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Extentions;
+using System.Linq;
 
 namespace Cslinq
 {
@@ -7,10 +9,10 @@ namespace Cslinq
     {
         static void Main(string[] args)
         {
-            IEnumeral<string> cites = new[] { "Ghent", "London", "Las Vegas", "Hyderbad" };
+            IEnumerable<string> cites = new[] { "Ghent", "London", "Las Vegas", "Hyderbad" };
 
 
-            IEnumeral<string> query = cites.StringsThatStartWith("L");
+            IEnumerable<string> query = cites.StringsThatStartWith("L");
 
             foreach (var city in query)
             {
@@ -22,6 +24,7 @@ namespace Cslinq
 
 
             DateTime date = new DateTime(2020, 6, 16);
+
             int daysTillEndOfMonth = date.DaysToEndOfMonth();
 
             Console.WriteLine(daysTillEndOfMonth);
@@ -33,7 +36,7 @@ namespace Cslinq
     {
         public static int DaysToEndOfMonth(this DateTime date)
         {
-            return DateTime.DaysToEndOfMonth(date.Year, date.Month) - date.Day;
+            return DateTime.DaysInMonth(date.Year, date.Month) - date.Day;
         }
     }
 
