@@ -1,4 +1,5 @@
 ﻿using System;
+using Extentions;
 
 namespace Cslinq
 {
@@ -13,6 +14,10 @@ namespace Cslinq
             {
                 Console.WriteLine(city);
             }
+
+
+
+
 
             DateTime date = new DateTime(2020, 6, 16);
             int daysTillEndOfMonth = date.DaysToEndOfMonth();
@@ -29,5 +34,33 @@ namespace Cslinq
             return DateTime.DaysToEndOfMonth(date.Year, date.Month) - date.Day;
         }
     }
+
+}
+
+namespace Extentions
+{
+
+    public static class FilterExtentions
+    {
+        public static IEnumerable<string> StringsThatStartWith
+            (this IEnumerable<string> input, string start)
+        {
+            foreach (var s in input)
+            {
+                if (s.StartsWith(start))
+                {
+                    yield return s;
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
 
 }
