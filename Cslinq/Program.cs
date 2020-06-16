@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using Extentions;
 using System.Linq;
 
+
 namespace Cslinq
 {
     class Program
     {
         static void Main(string[] args)
         {
-            IEnumerable<string> cites = new[] { "Ghent", "London", "Las Vegas", "Hyderbad" };
+            IEnumerable<string> cities = new[] { "Ghent", "London", "Las Vegas", "Hyderbad" };
 
 
-            IEnumerable<string> query = cites.StringsThatStartWith("L");
+
+            IEnumerable<string> query = cities.StringsThatStartWith("L");
 
             foreach (var city in query)
             {
