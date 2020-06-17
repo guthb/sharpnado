@@ -13,10 +13,7 @@ namespace Cslinq
             IEnumerable<string> cities = new[] { "Ghent", "London", "Las Vegas", "Hyderbad" };
 
             IEnumerable<string> query =
-                cities.Filter(delegate (string item)
-                        {
-                            return item.StartsWith("L");
-                        });
+                cities.Filter((item) => item.StartsWith("L"));
 
             foreach (var city in query)
             {
