@@ -12,18 +12,13 @@ namespace Cslinq
         {
             IEnumerable<string> cities = new[] { "Ghent", "London", "Las Vegas", "Hyderbad" };
 
-
-
-            IEnumerable<string> query = cities.StringsThatStartWith("L");
+            IEnumerable<string> query =
+                cities.Filter(StringsThatStartWithL);
 
             foreach (var city in query)
             {
                 Console.WriteLine(city);
             }
-
-
-
-
 
             DateTime date = new DateTime(2020, 6, 16);
 
@@ -32,6 +27,12 @@ namespace Cslinq
             Console.WriteLine(daysTillEndOfMonth);
 
         }
+
+        static bool StringsThatStartWithL(string s)
+        {
+            return s.StartsWith("L");
+        }
+
     }
 
     public static class DateUtilites
@@ -49,17 +50,20 @@ namespace Extentions
 
     public static class FilterExtentions
     {
-        public static IEnumerable<string> StringsThatStartWith
-            (this IEnumerable<string> input, string start)
+        public static IEnumerable<T> Filter<T>
+            (this IEnumerable<T> input,
+            FilterDelegate<T> predicate)
         {
-            foreach (var s in input)
+            foreach (var item in input)
             {
-                if (s.StartsWith(start))
+                if (predicate(item))
                 {
-                    yield return s;
+                    yield return item;
                 }
             }
         }
+
+        public delegate bool FilterDelegate<T>(T item);
     }
 
 
