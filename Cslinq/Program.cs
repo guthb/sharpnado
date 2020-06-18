@@ -24,7 +24,8 @@ namespace Cslinq
 
 
             IEnumerable<string> query =
-                cities.Filter((item) => item.StartsWith("L"));
+                //cities.Filter((item) => item.StartsWith("L"));
+                cities.Where(city => city.StartsWith("L")).OrderByDescending(city => city.Length);
 
             foreach (var city in query)
             {
@@ -63,7 +64,7 @@ namespace Extentions
     {
         public static IEnumerable<T> Filter<T>
             (this IEnumerable<T> input,
-            FilterDelegate<T> predicate)
+            Func<T, bool> predicate)
         {
             foreach (var item in input)
             {
@@ -74,7 +75,7 @@ namespace Extentions
             }
         }
 
-        public delegate bool FilterDelegate<T>(T item);
+        //public delegate bool FilterDelegate<T>(T item);
     }
 
 
