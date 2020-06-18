@@ -50,14 +50,15 @@ namespace Cslinq
 
         private static void WorkWithFuncs()
         {
-            Func<int, int> square = x => x * x;
+            Expression<Func<int, int>> square = x => x * x;
+            //Func<int, int> square = x => x * x;
             Console.WriteLine(square(3));
 
             Func<int, int, int> add = (x, y) => x + y;
             Console.WriteLine(add(1, 3));
 
             Action<int> write = x => Console.WriteLine(x);
-            write(square(add(1, 3)));
+            //write(square(add(1, 3)));
         }
 
 
