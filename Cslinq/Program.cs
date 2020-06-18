@@ -12,6 +12,12 @@ namespace Cslinq
         {
             IEnumerable<string> cities = new[] { "Ghent", "London", "Las Vegas", "Hyderbad" };
 
+
+            Func<int, int> square = x => x * x;
+            Console.WriteLine(square(3));
+
+
+
             IEnumerable<string> query =
                 cities.Filter((item) => item.StartsWith("L"));
 
