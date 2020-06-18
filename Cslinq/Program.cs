@@ -10,9 +10,25 @@ namespace Cslinq
     {
         static void Main(string[] args)
         {
+            MovieDB db = new MovieDB();
+
+
+            IEnumerable<Movie> query =
+            db.MOvies.Where(m => m.Title.StartsWith("Star")
+                .OrderBy(m => m.ReleaseDate.Year));
+
+            foreach (var movie in query)
+            {
+                Console.WriteLine(movie.Title);
+            }
+
+
+        }
+
+
+        private static void QueryCites()
+        {
             IEnumerable<string> cities = new[] { "Ghent", "London", "Las Vegas", "Hyderbad" };
-
-
             Func<int, int> square = x => x * x;
             Console.WriteLine(square(3));
 
@@ -37,8 +53,10 @@ namespace Cslinq
             int daysTillEndOfMonth = date.DaysToEndOfMonth();
 
             Console.WriteLine(daysTillEndOfMonth);
-
         }
+
+
+
 
         // static bool StringsThatStartWithL(string s)
         // {
