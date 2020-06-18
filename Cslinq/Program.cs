@@ -14,7 +14,7 @@ namespace Cslinq
 
 
             IEnumerable<Movie> query =
-            db.MOvies.Where(m => m.Title.StartsWith("Star")
+            db.Movies.Where(m => m.Title.StartsWith("Star")
                 .OrderBy(m => m.ReleaseDate.Year));
 
             foreach (var movie in query)
