@@ -22,21 +22,14 @@ namespace Cslinq
                 Console.WriteLine(movie.Title);
             }
 
-
+            WorkWithFuncs();
         }
 
 
         private static void QueryCites()
         {
             IEnumerable<string> cities = new[] { "Ghent", "London", "Las Vegas", "Hyderbad" };
-            Func<int, int> square = x => x * x;
-            Console.WriteLine(square(3));
 
-            Func<int, int, int> add = (x, y) => x + y;
-            Console.WriteLine(add(1, 3));
-
-            Action<int> write = x => Console.WriteLine(x);
-            write(square(add(1, 3)));
 
 
             IEnumerable<string> query =
@@ -53,6 +46,18 @@ namespace Cslinq
             int daysTillEndOfMonth = date.DaysToEndOfMonth();
 
             Console.WriteLine(daysTillEndOfMonth);
+        }
+
+        private static void WorkWithFuncs()
+        {
+            Func<int, int> square = x => x * x;
+            Console.WriteLine(square(3));
+
+            Func<int, int, int> add = (x, y) => x + y;
+            Console.WriteLine(add(1, 3));
+
+            Action<int> write = x => Console.WriteLine(x);
+            write(square(add(1, 3)));
         }
 
 
