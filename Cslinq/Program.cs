@@ -2,17 +2,10 @@
 using System.Collections.Generic;
 using Extentions;
 using System.Linq;
-
+using Employee;
 
 namespace Cslinq
 {
-
-    public string FirstName { get; set; }
-
-    public void Speak()
-    {
-        Console.WriteLine("Hi, my name is {0}", FirstName);
-    }
 
 
     class Program
@@ -41,7 +34,15 @@ namespace Cslinq
             // }
 
             // WorkWithFuncs();
+
+
+
         }
+
+        private static object GetASpeaker()
+        {
+            return new Employee { FirstName = "John" }
+            }
 
 
         private static void QueryCites()
