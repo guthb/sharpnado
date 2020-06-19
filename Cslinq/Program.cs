@@ -6,32 +6,41 @@ using System.Linq;
 
 namespace Cslinq
 {
+
+    public string FirstName { get; set; }
+
+    public void Speak()
+    {
+        Console.WriteLine("Hi, my name is {0}", FirstName);
+    }
+
+
     class Program
     {
         static void Main(string[] args)
         {
-            MovieDB db = new MovieDB();
+            //MovieDB db = new MovieDB();
 
 
-            IEnumerable<Movie> query =
-            db.Movies.Where(m => m.Title.StartsWith("Star")
-                .OrderBy(m => m.ReleaseDate.Year));
+            // IEnumerable<Movie> query =
+            // db.Movies.Where(m => m.Title.StartsWith("Star")
+            //     .OrderBy(m => m.ReleaseDate.Year));
 
 
             //comprehension query syntax
 
-            var query2 =
-                from m in db.Movies
-                where m.Title.StartsWith("L");
-            StackOverflowException m;
+            // var query2 =
+            //     from m in db.Movies
+            //     where m.Title.StartsWith("L")
+            //     select m;
 
             //changed to query2 from query
-            foreach (var movie in query2)
-            {
-                Console.WriteLine(movie.Title);
-            }
+            // foreach (var movie in query2)
+            // {
+            //     Console.WriteLine(movie.Title);
+            // }
 
-            WorkWithFuncs();
+            // WorkWithFuncs();
         }
 
 
