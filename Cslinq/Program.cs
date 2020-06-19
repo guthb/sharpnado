@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Extentions;
 using System.Linq;
-using Employee;
+
 
 namespace Cslinq
 {
@@ -35,21 +35,21 @@ namespace Cslinq
 
             // WorkWithFuncs();
 
+            object o = GetASpeaker();
+            o.GetType().GetMethod("Speak").Invoke(o, null);
 
 
         }
 
         private static object GetASpeaker()
         {
-            return new Employee { FirstName = "John" }
-            }
+            return new Employee { FirstName = "John" };
+        }
 
 
         private static void QueryCites()
         {
             IEnumerable<string> cities = new[] { "Ghent", "London", "Las Vegas", "Hyderbad" };
-
-
 
             IEnumerable<string> query =
                 //cities.Filter((item) => item.StartsWith("L"));
@@ -67,18 +67,18 @@ namespace Cslinq
             Console.WriteLine(daysTillEndOfMonth);
         }
 
-        private static void WorkWithFuncs()
-        {
-            Expression<Func<int, int>> square = x => x * x;
-            //Func<int, int> square = x => x * x;
-            Console.WriteLine(square(3));
+        // private static void WorkWithFuncs()
+        // {
+        //     Expression<Func<int, int>> square = x => x * x;
+        //     //Func<int, int> square = x => x * x;
+        //     Console.WriteLine(square(3));
 
-            Func<int, int, int> add = (x, y) => x + y;
-            Console.WriteLine(add(1, 3));
+        //     Func<int, int, int> add = (x, y) => x + y;
+        //     Console.WriteLine(add(1, 3));
 
-            Action<int> write = x => Console.WriteLine(x);
-            //write(square(add(1, 3)));
-        }
+        //     Action<int> write = x => Console.WriteLine(x);
+        //     //write(square(add(1, 3)));
+        // }
 
 
 
