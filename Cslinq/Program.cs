@@ -35,8 +35,13 @@ namespace Cslinq
 
             // WorkWithFuncs();
 
-            object o = GetASpeaker();
-            o.GetType().GetMethod("Speak").Invoke(o, null);
+            //object o = GetASpeaker();
+
+            //o.GetType().GetMethod("Speak").Invoke(o, null);  //reflection?
+
+            //dynamic
+            dynamic o = GetASpeaker();
+            o.Speak();
 
 
         }
