@@ -17,7 +17,16 @@ namespace Cslinq
             db.Movies.Where(m => m.Title.StartsWith("Star")
                 .OrderBy(m => m.ReleaseDate.Year));
 
-            foreach (var movie in query)
+
+            //comprehension query syntax
+
+            var query2 =
+                from m in db.Movies
+                where m.Title.StartsWith("L");
+            StackOverflowException m;
+
+            //changed to query2 from query
+            foreach (var movie in query2)
             {
                 Console.WriteLine(movie.Title);
             }
