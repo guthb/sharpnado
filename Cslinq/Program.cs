@@ -46,14 +46,16 @@ namespace Cslinq
 
             Type excelType = Type.GetTypeFromProgID("Excel.Application");
 
-            dynamic excel = Activator.CreateComInstanceFrom(excelType);
+            dynamic excel = Activator.CreateInstance(excelType);
+            excel.Visible = true;
 
             excel.Workbooks.Add();
 
             dynamic sheet = excel.ActiveSheet;
 
-            Process[] processes = processes.GetProcesses();
-            for (int i = 0; i < processes.length; i++)
+            Process[] processes = Process.GetProcesses();
+
+            for (int i = 0; i < processes.Length; i++)
             {
                 sheet.Cells[i + 1, "A"] = processes[i].ProcessName;
                 sheet.Cells[i + 1, "B"] = processes[i].Threads.Count;
