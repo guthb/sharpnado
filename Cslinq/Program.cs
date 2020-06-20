@@ -48,9 +48,12 @@ namespace Cslinq
             expando.Name = "John";
             expando.Speak = new Action(() => Console.WriteLine(expando.Name));
 
-            expando.Speak();
+            //expando.Speak();
 
-
+            foreach (var member in expando)
+            {
+                Console.WriteLine(member.Key);
+            }
         }
 
         private static void AutomateExcel()
