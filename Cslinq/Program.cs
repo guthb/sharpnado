@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Extentions;
 using System.Linq;
+using System.Dynamic;
 
 
 namespace Cslinq
@@ -40,10 +41,20 @@ namespace Cslinq
             //o.GetType().GetMethod("Speak").Invoke(o, null);  //reflection?
 
             //dynamic
-            dynamic o = GetASpeaker();
-            o.Speak();
+            // dynamic o = GetASpeaker();
+            // o.Speak();
+
+            dynamic expando = new ExpandoObject();
+            expando.Name = "John";
+            expando.Speak = new Action(() => Console.WriteLine(expando.Name));
+
+            expando.Speak();
 
 
+        }
+
+        private static void AutomateExcel()
+        {
             Type excelType = Type.GetTypeFromProgID("Excel.Application");
 
             dynamic excel = Activator.CreateInstance(excelType);
@@ -53,14 +64,13 @@ namespace Cslinq
 
             dynamic sheet = excel.ActiveSheet;
 
-            Process[] processes = Process.GetProcesses();
+            // Process[] processes = Process.GetProcesses();
 
-            for (int i = 0; i < processes.Length; i++)
-            {
-                sheet.Cells[i + 1, "A"] = processes[i].ProcessName;
-                sheet.Cells[i + 1, "B"] = processes[i].Threads.Count;
-            }
-
+            // for (int i = 0; i < processes.Length; i++)
+            // {
+            //     sheet.Cells[i + 1, "A"] = processes[i].ProcessName;
+            //     sheet.Cells[i + 1, "B"] = processes[i].Threads.Count;
+            // }
         }
 
         private static object GetASpeaker()
@@ -109,6 +119,8 @@ namespace Cslinq
         // {
         //     return s.StartsWith("L");
         // }
+
+
 
     }
 
