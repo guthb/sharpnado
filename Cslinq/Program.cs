@@ -16,7 +16,7 @@ namespace Cslinq
         {
 
 
-            var doc = XDocument.Load("Employees.xml").AsExpando();
+            dynamic doc = new DynamicXml("Employees.xml");
             foreach (var employee in doc.Employees)
             {
                 Console.WriteLine(employee.FirstName);
@@ -140,7 +140,16 @@ namespace Extentions
     }
 
 
+    internal class DynamicXml : DynamicObject
+    {
 
+        private dynamic _xml;
+
+        public DynamicXml(string fileName)
+        {
+            _xml = XDocument.Load(fileName);
+        }
+    }
 
 
 
