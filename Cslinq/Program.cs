@@ -149,6 +149,21 @@ namespace Extentions
         {
             _xml = XDocument.Load(fileName);
         }
+
+        public override bool TryGetMember(GetMemberBinder binder, out object result)
+        {
+            var xml = _xml.Element(binder.Name);
+            if (xml != null)
+            {
+                result = new DynamicXml(xml);
+                return true;
+            }
+
+            result = nill;
+            return false;
+        }
+
+
     }
 
 
