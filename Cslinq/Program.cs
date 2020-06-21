@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using Extentions;
 using System.Linq;
 using System.Dynamic;
@@ -140,7 +140,7 @@ namespace Extentions
     }
 
 
-    internal class DynamicXml : DynamicObject
+    internal class DynamicXml : DynamicObject, IEnumerable
     {
 
         private dynamic _xml;
@@ -167,6 +167,14 @@ namespace Extentions
 
             result = nill;
             return false;
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            foreach (var child in _xml.Elements())
+            {
+                yield return new DynamicXml(child);
+            }
         }
 
 
