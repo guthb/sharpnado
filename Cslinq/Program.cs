@@ -23,10 +23,6 @@ namespace Cslinq
             }
 
 
-
-
-
-
         }
         private static void ReadXmlExpando()
         {
@@ -175,14 +171,15 @@ namespace Extentions
             {
                 yield return new DynamicXml(child);
             }
+
+
         }
 
+        public static implicit operator string(DynamicXml xml)
+        {
+            return xml._xml.Value;
+        }
 
     }
-
-
-
-
-
 
 }
