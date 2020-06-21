@@ -150,6 +150,12 @@ namespace Extentions
             _xml = XDocument.Load(fileName);
         }
 
+        public DynamicXml(dynamic xml)
+        {
+            _xml = xml;
+        }
+
+
         public override bool TryGetMember(GetMemberBinder binder, out object result)
         {
             var xml = _xml.Element(binder.Name);
