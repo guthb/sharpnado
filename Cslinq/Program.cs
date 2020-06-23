@@ -16,15 +16,20 @@ namespace Cslinq
         {
             var engine = IronRuby.Ruby.CreateEngine();
             var scope = engine.CreateScope();
-            scope.SetVariable("employee", new Employee { FirstName = "Dan the Man" });
+            scope.SetVariable("employee", new Employee { FirstName = "Dan the  c# Man" });
 
-            engine.ExcuteFile("program.rb");
+            engine.ExcuteFile("program.rb", scope);
 
-            dynamic doc = new DynamicXml("Employees.xml");
-            foreach (var employee in doc.Employees)
-            {
-                Console.WriteLine(employee.FirstName);
-            }
+            dynamic ruby = engine.Runtime.Globals;
+            dynamic person = ruby.Person.@new();
+            person.firstName = "Randy Ruby";
+            person.speak();
+
+            // dynamic doc = new DynamicXml("Employees.xml");
+            // foreach (var employee in doc.Employees)
+            // {
+            //     Console.WriteLine(employee.FirstName);
+            // }
 
 
         }
