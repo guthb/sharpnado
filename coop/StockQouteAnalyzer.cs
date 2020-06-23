@@ -33,6 +33,11 @@ namespace coop
 
         }
 
+        public void AnalyzeQuotes()
+        {
+
+        }
+
     }
 
 
