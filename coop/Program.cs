@@ -6,7 +6,9 @@ namespace coop
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var analayzer = new StockQouteAnalyzer(args[0]);
+            analayzer.LoadQoutes();
+            analayzer.AnalyzeQuotes();
         }
     }
 }
