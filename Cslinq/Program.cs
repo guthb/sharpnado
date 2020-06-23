@@ -14,7 +14,10 @@ namespace Cslinq
     {
         static void Main(string[] args)
         {
+            var engine = IronRuby.Ruby.CreateEngine();
 
+
+            engine.ExcuteFile("program.rb");
 
             dynamic doc = new DynamicXml("Employees.xml");
             foreach (var employee in doc.Employees)
