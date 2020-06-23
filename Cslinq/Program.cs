@@ -15,7 +15,8 @@ namespace Cslinq
         static void Main(string[] args)
         {
             var engine = IronRuby.Ruby.CreateEngine();
-
+            var scope = engine.CreateScope();
+            scope.SetVariable("employee", new Employee { FirstName = "Dan the Man" });
 
             engine.ExcuteFile("program.rb");
 
