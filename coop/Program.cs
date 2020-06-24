@@ -10,8 +10,30 @@ namespace coop
         public decimal High { get; set; }
         public decimal Low { get; set; }
         public decimal Close { get; set; }
-        public bool ReverseDownFrom(StockQoute otherQoute) { }
-        public bool ReverseUpFrom(StockQoute otherQoute) { }
+        public bool ReverseDownFrom(StockQoute otherQoute)
+        {
+            return Open > otherQoute.High && Close < otherQoute;
+        }
+        public bool ReverseUpFrom(StockQoute otherQoute)
+        {
+            return Open < otherQoute.Low && Close > otherQoute.High;
+        }
+    }
+
+    public class StockQouteLoader
+    {
+
+    }
+
+    public enum ReversalDirection
+    {
+        Up,
+        Down
+    }
+
+    public class ReversalDirection
+    {
+
     }
 
     class Program
