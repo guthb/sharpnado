@@ -51,9 +51,15 @@ namespace coop
         Down
     }
 
-    public class ReversalDirection
+    public class Reversal
     {
-
+        public Reversal(StockQuoteLoader quoteLoader, ReversalDirection direction)
+        {
+            StockQuote = quote;
+            direction = direction;
+        }
+        public ReversalDirection Direction { get; set; }
+        public StockQuote StockQuote { get; set; }
     }
 
     class Program
