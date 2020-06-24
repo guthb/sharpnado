@@ -85,8 +85,14 @@ namespace coop
         static void Main(string[] args)
         {
             var analayzer = new StockQouteAnalyzer(args[0]);
-            analayzer.LoadQoutes();
-            analayzer.AnalyzeQuotes();
+            foreach (var reversal in analayzer.FindREversals())
+            {
+                PrintReversal(reversal);
+            }
+            // analayzer.LoadQoutes();
+            // analayzer.AnalyzeQuotes();
         }
+        private static void PrintReversal(Reversal reversal)
+        { }
     }
 }
