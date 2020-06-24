@@ -62,6 +62,24 @@ namespace coop
         public StockQuote StockQuote { get; set; }
     }
 
+    class StockQouteAnalyzer
+    {
+        private readonly StockQuoteLoader _loader;
+        private readonly List<StockQuote> _quotes;
+        public StockQouteAnalyzer(string fileName)
+        {
+            _loader = new StockQuoteLoader(fileName);
+            _quotes = _loader.Load().ToList();
+        }
+
+        public IEnumerable<Reversal> FindREversals()
+        {
+            var locator = new ReversalLocator(_quotes);
+            return locator.Locate();
+        }
+
+    }
+
     class Program
     {
         static void Main(string[] args)
