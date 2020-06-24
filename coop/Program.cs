@@ -3,7 +3,7 @@
 namespace coop
 {
 
-    public class StockQoute
+    public class StockQuote
     {
         public DateTime Date { get; set; }
         public decimal Open { get; set; }
@@ -20,10 +20,30 @@ namespace coop
         }
     }
 
-    public class StockQouteLoader
+    public class StockQuoteLoader
     {
+        private readonly string _FileName;
 
+        public StockQuoteLoader(string, fileName)
+        {
+            _FileName = _FileName;
+        }
+
+        public IEnumerable<StockQuote> Load()
+        {
+            return from line in FieldAccessException.ReadAllLines(_FileName).Skip(1)
+                   let data = line.Split(',')
+                   select new StockQuote()
+                   {
+                       Date = DateTime.Parse(data[0]),
+                       Open = decimal.Parse(data[1]),
+                       High = decimal.Parse(data[2]),
+                       Low = decimal.Parse(data[3]),
+                       Close = decimal.Parse(data[4])
+                   };
+        }
     }
+
 
     public enum ReversalDirection
     {
