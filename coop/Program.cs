@@ -49,7 +49,7 @@ namespace coop
         }
     }
 
-    public class File : IDataLoader
+    public class FileLoader : IDataLoader
     {
         private readonly string _FileName;
 
@@ -80,7 +80,10 @@ namespace coop
         }
     }
 
+    public interface IStockQuiteParser
+    { }
 
+    public class StockQuoteCsvParser : IStockQuoteParser { }
     public enum ReversalDirection
     {
         Up,
