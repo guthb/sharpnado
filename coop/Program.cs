@@ -80,6 +80,15 @@ namespace coop
 
     }
 
+    class StockQouteAnalyzer
+    {
+        private readonly StockQuoteLoader _loader;
+        private readonly List<StockQuote> _quotes;
+
+
+
+    }
+
 
 
     class Program
