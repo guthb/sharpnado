@@ -22,7 +22,7 @@ namespace coop
 
     public interface IDataLoader
     {
-
+        string LoadData();
     }
 
     public class StockQuoteLoader
