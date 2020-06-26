@@ -60,9 +60,27 @@ namespace coop
 
         public string LoadData()
         {
-            return File.ReadAllText(_FileName)
+            return File.ReadAllText(_FileName);
         }
     }
+
+    public class WebLoader : IDataLoader
+    {
+        private readonly string _url;
+
+        public WebLoader(string url)
+        {
+            _url = url;
+        }
+
+        public string LoadData()
+        {
+            var client = new WebClient();
+            return client.DownloadString(new UIntPtr(_url));
+        }
+    }
+
+
     public enum ReversalDirection
     {
         Up,
