@@ -80,6 +80,8 @@ namespace coop
 
     }
 
+
+
     class Program
     {
         static void Main(string[] args)
@@ -89,8 +91,6 @@ namespace coop
             {
                 PrintReversal(reversal);
             }
-            // analayzer.LoadQoutes();
-            // analayzer.AnalyzeQuotes();
         }
         private static void PrintReversal(Reversal reversal)
         { }
