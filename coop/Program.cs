@@ -20,6 +20,11 @@ namespace coop
         }
     }
 
+    public interface IDataLoader
+    {
+
+    }
+
     public class StockQuoteLoader
     {
         private readonly string _FileName;
