@@ -49,7 +49,20 @@ namespace coop
         }
     }
 
+    public class File : IDataLoader
+    {
+        private readonly string _FileName;
 
+        public FileLoader(string fileName)
+        {
+            _FileName = fileName;
+        }
+
+        public string LoadData()
+        {
+            return File.ReadAllText(_FileName)
+        }
+    }
     public enum ReversalDirection
     {
         Up,
