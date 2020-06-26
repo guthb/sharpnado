@@ -80,12 +80,24 @@ namespace coop
 
     }
 
-    class StockQouteAnalyzer
+    class StockQuoteAnalyzer
     {
         private readonly StockQuoteLoader _loader;
         private readonly List<StockQuote> _quotes;
 
+        public StockQuote(string urlOfFilename)
+        {
+            if (urlOfFilename.ToLower().StartsWith("http"))
+            {
+                _loader = new StockQuoteWebLoader(urlOfFilename);
+            }
+            else
+            {
+                _loader = new StockQuoteFileLoader(urlOfFilename);
 
+            }
+            _quotes = _loader.Load().ToList();
+        }
 
     }
 
