@@ -81,7 +81,9 @@ namespace coop
     }
 
     public interface IStockQuiteParser
-    { }
+    {
+        IList<StockQuote> ParseQuotes();
+    }
 
     public class StockQuoteCsvParser : IStockQuoteParser { }
     public enum ReversalDirection
