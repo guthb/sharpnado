@@ -85,7 +85,31 @@ namespace coop
         IList<StockQuote> ParseQuotes();
     }
 
-    public class StockQuoteCsvParser : IStockQuoteParser { }
+    public class StockQuoteCsvParser : IStockQuoteParser
+    {
+        private readonly IDataLoader _loader;
+        public StockQuoteCsvParser(IDataLoader loader)
+        {
+            _loader = loader;
+        }
+        public IList<StockQuote> ParseQuotes()
+        {
+            var csv = _loader.LoadData().Split('\n');
+            return (
+                from line in csvData.Skip(1)
+                let data = line.Split(',')
+                select new StockQuote()
+                {
+                    Date = DateTime.Parse(data[0]),
+                    Open = decimal.Parse(data[1]),
+                    High = decimal.Parse(data[2]),
+                    Low = decimal.Parse(data[3]),
+                    Close = decimal.Parse(data[4])
+                }
+            );
+
+        }
+    }
     public enum ReversalDirection
     {
         Up,
