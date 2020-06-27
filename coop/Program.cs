@@ -180,5 +180,20 @@ namespace coop
         }
         private static void PrintReversal(Reversal reversal)
         { }
+
+        private static IDataLoader GetDataLoader(string source)
+        {
+            IDataLoader loader;
+            if (source.ToLower().StartsWith("http"))
+            {
+                loader = new WebLoader(source);
+
+            }
+            else
+            {
+                loader = new FileLoader(source);
+
+            }
+        }
     }
 }
