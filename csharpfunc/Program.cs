@@ -13,6 +13,18 @@ namespace csharpfunc
             Console.WriteLine(result);
         }
 
-
+        private static bool IsPrime(int number)
+        {
+            bool result = true;
+            for (long i = 2; i < number; i++)
+            {
+                if (number % i == 0)
+                {
+                    result = false;
+                    break;
+                }
+            }
+            return result;
+        }
     }
 }
