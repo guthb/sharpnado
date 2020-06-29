@@ -11,7 +11,7 @@ namespace csharpfunc
             var primes = FindPrimes(numbers);
 
 
-            foreach (var prime in primes)
+            foreach (var prime in numbers.FindPrimes())
             {
                 Console.WriteLine(prime);
             }
