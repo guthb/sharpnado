@@ -7,7 +7,15 @@ namespace csharpfunc
     {
         static void Main(string[] args)
         {
-            var number = int.Parse(args[0]);
+            var number = new[] { 3, 5, 7, 9, 11, 13 };
+            var primes = FindPrimes(numbers);
+
+
+            foreach (var prime in primes)
+            {
+                Console.WriteLine(prime);
+            }
+
             var result = IsPrime(number);
 
             Console.WriteLine(result);
