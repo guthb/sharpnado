@@ -34,5 +34,13 @@ namespace csharpfunc
             }
             return result;
         }
+
+        private static IEnumerable<int> FindPrimes(this IEnumerable<int> values)
+        { }
+
+        private static bool IsOdd(int number) { }
+
+        private static bool IsEven(int number) { }
+
     }
 }
