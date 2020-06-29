@@ -11,7 +11,7 @@ namespace csharpfunc
             var primes = FindPrimes(numbers);
 
 
-            foreach (var prime in numbers.FindPrimes())
+            foreach (var prime in numbers.Find(IsOdd))
             {
                 Console.WriteLine(prime);
             }
@@ -35,13 +35,13 @@ namespace csharpfunc
             return result;
         }
 
-        private static IEnumerable<int> FindPrimes(this IEnumerable<int> values)
+        private static IEnumerable<int> Find(this IEnumerable<int> values, Func<int, bool> test)
         {
             var result = new List<int>();
 
             foreach (var number in values)
             {
-                if (IsPrime(number))
+                if (test(number))
                 {
                     result.Add(number);
                 }
