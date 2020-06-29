@@ -36,7 +36,18 @@ namespace csharpfunc
         }
 
         private static IEnumerable<int> FindPrimes(this IEnumerable<int> values)
-        { }
+        {
+            var result = new List<int>();
+
+            foreach (var number in values)
+            {
+                if (IsPrime(number))
+                {
+                    result.Add(number);
+                }
+            }
+
+        }
 
         private static bool IsOdd(int number) { }
 
