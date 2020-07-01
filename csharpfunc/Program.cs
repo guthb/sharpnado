@@ -32,7 +32,7 @@ namespace csharpfunc
             Random rand = new Random();
             while (true)
             {
-                yield return rand.Next();
+                yield return rand.Next(1000);
             }
 
         }
