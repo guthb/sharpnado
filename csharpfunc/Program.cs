@@ -21,6 +21,16 @@ namespace csharpfunc
             Console.WriteLine(result);
         }
 
+        private static IEnumerable<int> GetRandomNumbers()
+        {
+            yield return 3;
+            yield return 6;
+            yield return 9;
+            yield return 11;
+            yield return 13;
+
+        }
+
         private static bool IsPrime(int number)
         {
             bool result = true;
@@ -37,14 +47,15 @@ namespace csharpfunc
 
         private static IEnumerable<int> Find(this IEnumerable<int> values, Func<int, bool> test)
         {
-            var result = new List<int>();
+            // var result = new List<int>();
 
             foreach (var number in values)
             {
                 Console.WriteLine("Testing {0}", number);
                 if (test(number))
                 {
-                    result.Add(number);
+                    //result.Add(number);
+                    yield return number;
                 }
             }
             return result;
