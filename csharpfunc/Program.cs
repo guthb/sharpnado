@@ -11,7 +11,7 @@ namespace csharpfunc
             var primes = FindPrimes(numbers);
 
 
-            foreach (var prime in numbers.Find(IsOdd))
+            foreach (var prime in numbers.Find(IsOdd).Take(2))
             {
                 Console.WriteLine(prime);
             }
@@ -41,11 +41,13 @@ namespace csharpfunc
 
             foreach (var number in values)
             {
+                Console.WriteLine("Testing {0}", number);
                 if (test(number))
                 {
                     result.Add(number);
                 }
             }
+            return result;
 
         }
 
