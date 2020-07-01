@@ -11,7 +11,7 @@ namespace csharpfunc
             var primes = FindPrimes(numbers);
 
 
-            foreach (var prime in numbers.Find(IsOdd).Take(2))
+            foreach (var prime in GetRandomNumbers.Find(IsOdd).Take(2))
             {
                 Console.WriteLine(prime);
             }
@@ -23,11 +23,17 @@ namespace csharpfunc
 
         private static IEnumerable<int> GetRandomNumbers()
         {
-            yield return 3;
-            yield return 6;
-            yield return 9;
-            yield return 11;
-            yield return 13;
+            // yield return 3;
+            // yield return 6;
+            // yield return 8;
+            // yield return 9;
+            // yield return 11;
+            // yield return 13;
+            Random rand = new Random();
+            while (true)
+            {
+                yield return rand.Next();
+            }
 
         }
 
