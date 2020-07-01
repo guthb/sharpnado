@@ -7,6 +7,10 @@ namespace csharpfunc
     {
         static void Main(string[] args)
         {
+            
+            var timekeeper = new TimeKeeper()
+            var elapsed = timekeeper.Measure(()=>
+            
             var number = new[] { 3, 5, 7, 9, 11, 13 };
             var primes = FindPrimes(numbers);
 
@@ -14,11 +18,12 @@ namespace csharpfunc
             foreach (var prime in GetRandomNumbers.Find(IsOdd).Take(2))
             {
                 Console.WriteLine(prime);
-            }
+            });
+            Console.WriteLine(elapsed);
 
             var result = IsPrime(number);
 
-            Console.WriteLine(result);
+            Console.WriteLine(elapsed);
         }
 
         private static IEnumerable<int> GetRandomNumbers()
