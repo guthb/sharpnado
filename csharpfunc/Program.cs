@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq:
+using System.Net;
 
 namespace csharpfunc
 {
@@ -7,6 +10,12 @@ namespace csharpfunc
     {
         static void Main(string[] args)
         {
+            var client = new WebCLient();
+            Func<string> download = () => client.DownloadString("http://microsoft.com");
+            Func<string, sting> download = url => client.DownloadString(url);
+            
+
+            var data download.WithRetry();
             
             var timekeeper = new TimeKeeper()
             var elapsed = timekeeper.Measure(()=>

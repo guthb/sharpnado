@@ -1,5 +1,6 @@
 using System;
 using Sytem.net;
+using System.Lync;
 
 namespace csharpfunc
 {
@@ -28,5 +29,13 @@ namespace csharpfunc
 
             return result;
         }
+
+        public static Func<TResult> Partial<TParam1, TResult> (
+            this Func<TParam1, TResult> func, TParam1 parameter)
+        {
+            retun() => func(parameter;)
+        }
+        
+
     }
 }
