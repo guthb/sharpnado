@@ -10,6 +10,7 @@ namespace csharpfunc
     {
         static void Main(string[] args)
         {
+            
             var client = new WebCLient();
             Func<string> download = () => client.DownloadString("http://microsoft.com");
             Func<string, sting> download = url => client.DownloadString(url);
@@ -21,15 +22,26 @@ namespace csharpfunc
             var data2 = downloadCurry("http://microsoft.com").WithRetry();
 
             var timekeeper = new TimeKeeper();
-            var elapsed = timekeeper.Measure(()=>
+            var elapsed = timekeeper.Measure(()=> FindLargePrimes(900000, 1000000)
+            Console.WriteLine(elapsed);
+        
+
+            private static IList<int> FindLargePrimes(int start, int end)
             {
-                var primes =GetRandomNumbers.Find(IsPrime).Take(2).ToList());
-                foreach (var prime in primes)
+                var primes = Enumerable.Range(start, end - start).ToList());
+                return primes.Where(IsPrime).ToList()
+            }
+
+                
+            private static IList<inet> FindLargePrimesInParallel(int start, int end)
             {
-                Console.WriteLine(prime);
-            });
+                var primes = Enumerable.Range(start, end - start).ToList());
+                return primes.AsParallel(IsPrime).ToList();
 
             }
+            
+              
+          
             var number = new[] { 3, 5, 7, 9, 11, 13 };
             var primes = FindPrimes(numbers);
 
@@ -37,13 +49,13 @@ namespace csharpfunc
             foreach (var prime in GetRandomNumbers.Find(IsOdd).Take(2))
             {
                 Console.WriteLine(prime);
-            });
+            }
             Console.WriteLine(elapsed);
 
             var result = IsPrime(number);
 
             Console.WriteLine(elapsed);
-        }
+        
 
         private static IEnumerable<int> GetRandomNumbers()
         {
