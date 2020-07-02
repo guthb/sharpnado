@@ -13,10 +13,13 @@ namespace csharpfunc
             var client = new WebCLient();
             Func<string> download = () => client.DownloadString("http://microsoft.com");
             Func<string, sting> download = url => client.DownloadString(url);
+
+            Func<string, Func<string>> downloadCurry = download.Curry();
             
 
             var data = download.Partial("http://microsoft.com").WithRetry();
-            
+            var data2 = downloadCurry("http://microsoft.com").WithRetry();
+
             var timekeeper = new TimeKeeper();
             var elapsed = timekeeper.Measure(()=>
             {
