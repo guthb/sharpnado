@@ -35,6 +35,13 @@ namespace csharpfunc
         {
             retun() => func(parameter;)
         }
+
+        public static Func<TParam1, Func<TResult<>> Curry<TParam1, TResult> 
+            (this Func<TParam1, TResult> func)
+        {
+            retun parameter => () func(parameter)
+        }
+
         
 
     }

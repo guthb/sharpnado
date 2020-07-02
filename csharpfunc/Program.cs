@@ -15,11 +15,18 @@ namespace csharpfunc
             Func<string, sting> download = url => client.DownloadString(url);
             
 
-            var data download.WithRetry();
+            var data = download.Partial("http://microsoft.com").WithRetry();
             
-            var timekeeper = new TimeKeeper()
+            var timekeeper = new TimeKeeper();
             var elapsed = timekeeper.Measure(()=>
-            
+            {
+                var primes =GetRandomNumbers.Find(IsPrime).Take(2).ToList());
+                foreach (var prime in primes)
+            {
+                Console.WriteLine(prime);
+            });
+
+            }
             var number = new[] { 3, 5, 7, 9, 11, 13 };
             var primes = FindPrimes(numbers);
 
