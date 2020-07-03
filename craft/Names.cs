@@ -9,7 +9,13 @@ namespace craft
             return strReversed.Equals(strReversed);
         }
 
-        public bool Check(string input){}
+        public bool Check(string input)
+        {
+            imput = input.Replace("", "");
+            var reversed = new string(input.Reverse().ToArray());
+            return reversed.Equals(input);
+
+        }
 
         public bool IsPalindrome(string input){}        
     }
