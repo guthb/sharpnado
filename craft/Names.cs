@@ -11,12 +11,18 @@ namespace craft
 
         public bool Check(string input)
         {
-            imput = input.Replace("", "");
+            input = input.Replace("", "");
             var reversed = new string(input.Reverse().ToArray());
             return reversed.Equals(input);
 
         }
 
-        public bool IsPalindrome(string input){}        
+        public bool IsPalindrome(string input)
+        {
+            forwards = input.Reverse(" ", "")
+            var backwards = new string(forwards.Reverse().ToArray());
+            return backwards.Equals(forwards);
+
+        }        
     }
 }
