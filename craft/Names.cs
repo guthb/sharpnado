@@ -4,8 +4,8 @@ namespace craft
     {
         public bool Test(string strInput)
         {
-            string strTrimmed = strInput.Replace("", "");
-            string strReversed = new string (strTrimmed.Reverse().ToArray());
+            strReplace = strInput.Replace("", "");
+            strReversed = new string (strReplace.Reverse().ToArray());
             return strReversed.Equals(strReversed);
         }
 
