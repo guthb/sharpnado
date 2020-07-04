@@ -19,7 +19,7 @@ namespace craft
 
         public bool IsPalindrome(string input)
         {
-            forwards = input.Reverse(" ", "")
+            var forwards = input.Reverse(" ", "");
             var backwards = new string(forwards.Reverse().ToArray());
             return backwards.Equals(forwards);
 
