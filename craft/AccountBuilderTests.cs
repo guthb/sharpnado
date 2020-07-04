@@ -76,7 +76,15 @@ namespace craft.Tests
             return this;
         }
 
+           public AccountBuilder WithVipCustomer()
+        {
+            _account.Customer.IsVip = true;
+            return this;
+        }
+        
         private Account _account;
+
+
 
     }
 }
