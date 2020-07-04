@@ -70,6 +70,12 @@ namespace craft.Tests
             return _account;
         }
 
+           public AccountBuilder WithLatePaymentStatus()
+        {
+            _account.DueDate = DateTime.Now.AddDays(-1);
+            return this;
+        }
+
         private Account _account;
 
     }
