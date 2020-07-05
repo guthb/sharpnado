@@ -27,10 +27,26 @@ namespace craft
 
         public void WriteFile(byte[] contents, bool flush)
         {
-            
+            //this is poor
+
         }
-    
-    
-    
+
+        //this is better
+        public void WriteFile(byte[] contents)
+        {
+            WriteFile(contents, false);
+        }
+
+        public void WriteFileAndFlush(byte[] contents)
+        {
+            WriteFile(contents, true);
+        }
+
+        public void LoginUser(string userName, stringpassword, IPAddress ipAddress, bool persist)
+        {
+            // ...
+        }
+
+       
     }
 }
