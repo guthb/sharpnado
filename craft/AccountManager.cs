@@ -44,8 +44,16 @@ namespace craft
 
         public void LoginUser(string userName, stringpassword, IPAddress ipAddress, bool persist)
         {
+            // ... to many params
+        }
+
+        // do this instead
+        public void LoginUser(UserLoginRequest  request)
+        {
             // ...
         }
+
+
 
        
     }
