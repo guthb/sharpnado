@@ -25,7 +25,10 @@ namespace craft
             return true;
         }
 
-
+        public void WriteFile(byte[] contents, bool flush)
+        {
+            
+        }
     
     
     
