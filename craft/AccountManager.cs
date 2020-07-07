@@ -53,7 +53,10 @@ namespace craft
             // ...
         }
 
-
+        if (account.Ballance > 0 && !account.IsVip && account.DueDate > CurrentDate)
+        {
+            //send off a warning
+        }
 
        
     }
