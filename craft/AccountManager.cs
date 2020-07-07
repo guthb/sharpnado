@@ -58,6 +58,11 @@ namespace craft
             //send off a warning
         }
 
+        //better
+        If (account.IsPastDue)
+        {
+            // ...
+        }
        
     }
 }
