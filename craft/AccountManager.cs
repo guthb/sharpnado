@@ -63,6 +63,20 @@ namespace craft
         {
             // ...
         }
+
+        if (account.Ballance < 10000)
+        {
+            return false;
+        }
+        else if (account.IsPastDue)
+        {
+            return false;
+        }
+        else if (account.IsVip)
+        {
+            return false;
+        }
        
+       return true;
     }
 }
