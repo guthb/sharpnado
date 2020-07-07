@@ -59,7 +59,7 @@ namespace craft
         }
 
         //better
-        If (account.IsPastDue)
+        if (account.IsPastDue)
         {
             // ...
         }
@@ -77,6 +77,24 @@ namespace craft
             return false;
         }
        
-       return true;
+        return true;
+
+        //better
+        var isValid = true;
+
+        if (account.Ballance < 10000)
+        {
+            isValid = false;
+        }
+        else if (account.IsPastDue)
+        {
+            isValid = false;
+        }
+        else if (account.IsVip)
+        {
+            return isValid;
+        }
+       
+        return true;
     }
 }
