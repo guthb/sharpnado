@@ -95,6 +95,6 @@ namespace craft
             return isValid;
         }
        
-        return true;
+        return isValid;
     }
 }
