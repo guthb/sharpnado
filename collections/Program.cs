@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace collections
 {
@@ -6,7 +10,27 @@ namespace collections
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string[] daysOfTheWeek = {
+                "Monday",
+                "Tuesday",
+                "WednesDay",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            };
+            // foreach (string day in daysOfTheWeek)
+            // {
+            //     Console.WriteLine(day);
+            // }
+
+
+            Console.WriteLine("WHich day do you want to display?");
+            Console.Write("(Monday = 0, etc.)>");
+            int iDay = int.Parse(Console.ReadLine());
+
+            string chosenDay = daysOfTheWeek[iDay];
+            Console.WriteLine($"That day is {chosenDay}");
         }
     }
 }
