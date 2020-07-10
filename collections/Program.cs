@@ -13,16 +13,28 @@ namespace collections
             string[] daysOfTheWeek = {
                 "Monday",
                 "Tuesday",
-                "WednesDay",
+                "WeesDay",
                 "Thursday",
                 "Friday",
                 "Saturday",
                 "Sunday"
             };
-            // foreach (string day in daysOfTheWeek)
-            // {
-            //     Console.WriteLine(day);
-            // }
+
+             Console.WriteLine("Before:");
+            foreach (string day in daysOfTheWeek)
+            {
+                Console.WriteLine(day);
+            }
+
+            daysOfTheWeek[2] = "Wednesday"
+
+
+            Console.WriteLine("\r\nAfter:");
+             foreach (string day in daysOfTheWeek)
+            {
+                Console.WriteLine(day);
+            }
+
 
 
             Console.WriteLine("WHich day do you want to display?");
