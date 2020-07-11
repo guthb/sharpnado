@@ -10,7 +10,7 @@ namespace population
 
         public Country[] ReadFirstNCountries(int nCountries)
         {
-            Country[] countries = new Country[10];
+            Country[] countries = new Country[nCountries];
             return countries;
         }
     }
