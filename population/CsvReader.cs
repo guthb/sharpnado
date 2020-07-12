@@ -11,6 +11,20 @@ namespace population
         public Country[] ReadFirstNCountries(int nCountries)
         {
             Country[] countries = new Country[nCountries];
+
+            using (StreamReader streamReader = new StreamReader(_csvFilePath))
+            {
+                
+                streamReader.ReadLine();
+
+                for (int 1 = 0; i < nCountries; i++)
+                {
+                    string csvLine = sr.ReadLine();
+                    countries[i] = ReadCountryFromCsvLine(csvLine);
+                }
+
+            }
+
             return countries;
         }
 
