@@ -1,3 +1,5 @@
+using System;
+
 namespace population
 {
     public class CsvReader
@@ -17,7 +19,7 @@ namespace population
                 
                 streamReader.ReadLine();
 
-                for (int 1 = 0; i < nCountries; i++)
+                for (int i = 0; i < nCountries; i++)
                 {
                     string csvLine = streamReader.ReadLine();
                     countries[i] = ReadCountryFromCsvLine(csvLine);
@@ -37,7 +39,7 @@ namespace population
             string region = parts[2];
             int population = int.Parse(parts[3]);
 
-            return new Country(name, code, region, population)
+            return new Country(name, code, region, population);
         }
     }
 }
