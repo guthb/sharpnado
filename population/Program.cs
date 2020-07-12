@@ -6,7 +6,7 @@ namespace population
     {
         static void Main(string[] args)
         {
-            string filePath = @"somepath";
+            string filePath = @"/population/popFile.csv";
 
             CsvReader reader = new CsvReader(filePath);
 
