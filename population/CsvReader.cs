@@ -19,7 +19,7 @@ namespace population
 
                 for (int 1 = 0; i < nCountries; i++)
                 {
-                    string csvLine = sr.ReadLine();
+                    string csvLine = streamReader.ReadLine();
                     countries[i] = ReadCountryFromCsvLine(csvLine);
                 }
 
