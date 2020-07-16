@@ -6,6 +6,14 @@ namespace population
     {
         static void Main(string[] args)
         {
+            
+            List<string> daysOfWeek = new List<string>();
+
+            List<int> ints = new List<int>();
+            
+
+
+            
             string filePath = @"/population/popFile.csv";
 
             CsvReader reader = new CsvReader(filePath);
@@ -16,6 +24,11 @@ namespace population
             {
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population}.PadLeft(15)}: {country.Name}")
             }
+        
+            
+
+            
+        
         }
     }
 }
