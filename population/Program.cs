@@ -19,7 +19,16 @@ namespace population
             daysOfWeek.Add("Sunday");
 
 
-
+            List<string> daysOfWeek = new List<string>
+            {
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            }
             
             string filePath = @"/population/popFile.csv";
 
