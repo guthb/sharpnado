@@ -58,11 +58,6 @@ namespace population
                     throw new Exception($"Can't parse country from csvLine: {csvLine}");
             }
             
-            
-            
-            
-            
-            
             int.TryParse(popText, out int population);
 
             return new Country(name, code, region, population);
