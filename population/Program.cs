@@ -38,12 +38,11 @@ namespace population
             
             foreach ( Country country in countries)
             {
-                Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population}.PadLeft(15)}: {country.Name}")
+                Console.WriteLine($"{PopulationFormatter.FormatPopulation
+                    (country.Population).PadLeft(15)}: {country.Name}")
             }
-        
-            
 
-            
+            Console.WriteLine($"{countries.Count} countries");
         
         }
     }
