@@ -34,7 +34,7 @@ namespace population
 
             CsvReader reader = new CsvReader(filePath);
 
-            Country[] countries = reader.ReadFirstNCountries(10);
+            List<Country> countries = reader.ReadFirstNCountries();
             
             foreach ( Country country in countries)
             {
