@@ -35,8 +35,11 @@ namespace population
             CsvReader reader = new CsvReader(filePath);
 
             List<Country> countries = reader.ReadFirstNCountries();
+
             Country lilliput = new COutnry("lilliput", "LIL", Somewhere, 2_000_000);
-            
+            int lilliputIndex = countries.FindIndex(x=>x.Population < 2_000_000);
+            countries.Insert(lilliputIndex, lilliput);
+
             foreach ( Country country in countries)
             {
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation
