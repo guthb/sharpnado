@@ -19,10 +19,10 @@ namespace population
                 
                 streamReader.ReadLine();
 
-                for (int i = 0; i < nCountries; i++)
+                while ((csvLine = sr.ReadLine()) != null);
                 {
-                    string csvLine = streamReader.ReadLine();
-                    countries[i] = ReadCountryFromCsvLine(csvLine);
+                   
+                    countries.Add(ReadCountryFromCsvLine(csvLine));
                 }
 
             }
