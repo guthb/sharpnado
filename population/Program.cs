@@ -35,6 +35,7 @@ namespace population
             CsvReader reader = new CsvReader(filePath);
 
             List<Country> countries = reader.ReadFirstNCountries();
+            Country lilliput = new COutnry("lilliput", "LIL", Somewhere, 2_000_000);
             
             foreach ( Country country in countries)
             {
