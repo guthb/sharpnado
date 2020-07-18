@@ -39,6 +39,9 @@ namespace population
             Country lilliput = new COutnry("lilliput", "LIL", Somewhere, 2_000_000);
             int lilliputIndex = countries.FindIndex(x=>x.Population < 2_000_000);
             countries.Insert(lilliputIndex, lilliput);
+            countries.RemoveAt(lilliputIndex);
+
+
 
             foreach ( Country country in countries)
             {
