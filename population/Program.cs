@@ -36,7 +36,7 @@ namespace population
 
             List<Country> countries = reader.ReadFirstNCountries();
 
-            Country lilliput = new COutnry("lilliput", "LIL", Somewhere, 2_000_000);
+            Country lilliput = new Country("lilliput", "LIL", Somewhere, 2_000_000);
             int lilliputIndex = countries.FindIndex(x=>x.Population < 2_000_000);
             countries.Insert(lilliputIndex, lilliput);
             countries.RemoveAt(lilliputIndex);
@@ -50,6 +50,12 @@ namespace population
             }
 
             Console.WriteLine($"{countries.Count} countries");
+
+
+            country norway = new Country("Norway", "NOR", "Europe", 5_282_223);
+            country finland = new Country("Finland", "FIN", "Europe", 5_511_303);
+
+            Dictionary<string, Country> countries = new Dictionary<string, Country>()
         
         }
     }
