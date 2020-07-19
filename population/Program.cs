@@ -66,7 +66,7 @@ namespace population
             Console.WriteLine(selectedCountry.Name);
 
             foreach (var country in countries.Values)        
-                Console.WriteLine(coutnry.Value.Name);
+                Console.WriteLine(country.Name);
             
         
         }
