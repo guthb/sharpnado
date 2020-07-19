@@ -59,12 +59,15 @@ namespace population
 
             //better:
             var countries = new Dictionary<string, Country>();
-            countries.Add("NOR, norway");
-            countries.Add("FIN, finland");
+            // countries.Add("NOR, norway");
+            // countries.Add("FIN, finland");
 
             //better
             countries.Add(norway.Code, norway);
             countries.Add(finland.Code, finland);
+
+            Country selectedCountry = countries["NOR"];
+            Console.WriteLine(selectedCountry.Name);
         
         }
     }
