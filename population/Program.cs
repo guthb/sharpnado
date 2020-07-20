@@ -80,7 +80,9 @@ namespace population
             
                 Console.WriteLine(country.Name);
             
-
+            //dictionary this will fail
+            //countries.Add(norway.Code, norway);
+            //countries.Add(norway.Code, norway));
             
         
         }
