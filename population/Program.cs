@@ -56,11 +56,15 @@ namespace population
             country finland = new Country("Finland", "FIN", "Europe", 5_511_303);
 
             //better:
-            var countries = new Dictionary<string, Country>();
+            var countries = new Dictionary<string, Country>
+            {
+                {norway.Code, norway},
+                { finland.Code, finland}
+            };
          
             //better
-            countries.Add(norway.Code, norway);
-            countries.Add(finland.Code, finland);
+            //countries.Add(norway.Code, norway);
+            //countries.Add(finland.Code, finland);
 
             Country selectedCountry = countries["NOR"];
             Console.WriteLine(selectedCountry.Name);
