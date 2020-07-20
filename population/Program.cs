@@ -72,13 +72,15 @@ namespace population
             foreach (var country in countries.Values)        
                 Console.WriteLine(country.Name);
             
-            List<Country> countryList = new List<Country>();
-            countryList.Add(norway);
-            countryList.Add(norway);
+            Console.WriteLine(countries["MUS"].Name);
+
+            // List<Country> countryList = new List<Country>();
+            // countryList.Add(norway);
+            // countryList.Add(norway);
             
-            foreach ( Country country in countriesList)
+            // foreach ( Country country in countriesList)
             
-                Console.WriteLine(country.Name);
+            //     Console.WriteLine(country.Name);
             
             //dictionary this will fail
             //countries.Add(norway.Code, norway);
