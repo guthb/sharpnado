@@ -34,7 +34,19 @@ namespace population
 
             CsvReader reader = new CsvReader(filePath);
 
-            List<Country> countries = reader.ReadFirstNCountries();
+            //List<Country> countries = reader.ReadFirstNCountries();
+            Dictionary<string, Country> country = reader.ReadAllCountries();
+
+
+            Console.WriteLine("Which country code do you want to look up?"):
+            string userInput = Console.ReadLine();
+
+            bool gotCountry = countries.TryGetValue(userInput, out Country country);
+            if (!gotCountry)
+                Console.WriteLine($"Sorry,There is no country with the code, {userInput}");
+            else
+                Console.WriteLine($"{coutnry.Name} has population {PopulationFormatter.FormatPopulation(country.Population)}");
+
 
             Country lilliput = new Country("lilliput", "LIL", Somewhere, 2_000_000);
             int lilliputIndex = countries.FindIndex(x=>x.Population < 2_000_000);
