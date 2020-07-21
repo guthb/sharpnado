@@ -106,11 +106,20 @@ namespace population
             //countries.Add(norway.Code, norway);
             //countries.Add(norway.Code, norway));
             
-            for (int i = 0; i < countries.Country ++i)
+            Console.Write("Enter number of countries to display> ");
+            bool inputIsInt = int.TryParse(Console.ReadLine(), out int userInput);
+            if (!inputIsInt || userInput <=0)
+            {
+                Console.WriteLine("You must type in a positive integer. Exiting");
+                return;
+            }
+
+            int maxToDisplay = Math.Min(userInput, coutnries.Count);
+            for (int i = 0; i < maxToDisplay; ++i)
             {
                 Country country = countries[i];
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation
-                    (country.Population).PadLeft(15)}: {country.Name}")
+                    (country.Population).PadLeft(15)}: {country.Name}");
             }
             
 
