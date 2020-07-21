@@ -106,7 +106,15 @@ namespace population
             //countries.Add(norway.Code, norway);
             //countries.Add(norway.Code, norway));
             
-        
+            for (int i = 0; i < countries.Country ++i)
+            {
+                Country country = countries[i];
+                Console.WriteLine($"{PopulationFormatter.FormatPopulation
+                    (country.Population).PadLeft(15)}: {country.Name}")
+            }
+            
+
+
         }
     }
 }
