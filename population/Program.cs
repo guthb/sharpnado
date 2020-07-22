@@ -114,9 +114,17 @@ namespace population
                 return;
             }
 
-            int maxToDisplay = Math.Min(userInput, coutnries.Count);
-            for (int i = 0; i < maxToDisplay; ++i)
+            int maxToDisplay = userInput;
+            for (int i = 0; i < countries.Count; ++i)
             {
+                if (i > 0 && ( i % maxToDisplay == 0))
+                {
+                    Console.WriteLine( "hit return to continue, Anything else to quit>");
+                    if (Console.ReadLine() != "")
+                        break;
+                }
+
+
                 Country country = countries[i];
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation
                     (country.Population).PadLeft(15)}: {country.Name}");
