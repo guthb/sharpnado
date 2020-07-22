@@ -126,7 +126,7 @@ namespace population
 
 
                 Country country = countries[i];
-                Console.WriteLine($"{i}: {PopulationFormatter.FormatPopulation
+                Console.WriteLine($"{i+1}: {PopulationFormatter.FormatPopulation
                     (country.Population).PadLeft(15)}: {country.Name}");
             }
             
