@@ -115,7 +115,8 @@ namespace population
             }
 
             int maxToDisplay = userInput;
-            for (int i = 0; i < countries.Count; ++i)
+            //for (int i = 0; i < countries.Count; ++i)
+            for (int i = 0; i < countries.Count -1>=0; --i)
             {
                 if (i > 0 && ( i % maxToDisplay == 0))
                 {
