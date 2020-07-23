@@ -32,7 +32,7 @@ namespace population
 
         public void RemoveCommaCountires(List<Country> countries)
         {
-            for (int i = 0; i < countries.Count; i++)
+            for (int i = countries.Count -1; i >= 0;  i--)
             {
                 if (countries[i].Name.Containa(','))
                     countries.RemoveAt(i);
