@@ -106,6 +106,9 @@ namespace population
             //countries.Add(norway.Code, norway);
             //countries.Add(norway.Code, norway));
             
+            List<Country> countries = reader.ReadFirstNCountries();
+            reader.RemoveCommaCountires(countries);
+            
             Console.Write("Enter number of countries to display> ");
             bool inputIsInt = int.TryParse(Console.ReadLine(), out int userInput);
             if (!inputIsInt || userInput <=0)
