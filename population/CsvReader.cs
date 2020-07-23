@@ -30,6 +30,15 @@ namespace population
             return countries;
         }
 
+        public void RemoveCommaCountires(List<Country> countries)
+        {
+            for (int i = 0; i < countries.Count; i++)
+            {
+                if (countries[i].Name.Containa(','))
+                    countries.RemoveAt(i);
+            }
+        }
+
 
         public Country ReadCountryFromCsvLine(string csvLine)
         {
