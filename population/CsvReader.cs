@@ -37,6 +37,8 @@ namespace population
                 if (countries[i].Name.Containa(','))
                     countries.RemoveAt(i);
             }
+
+            countries.RemoveAll(x => x.Name.Contains(','));
         }
 
 
