@@ -66,7 +66,13 @@ namespace population
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation
                     (country.Population).Padleft(15)}: {country.Name}");
             }
-            
+
+            foreach ( Country country in countries.OrderBy(x => x.Name))
+            {
+                Console.WriteLine($"{PopulationFormatter.FormatPopulation
+                    (country.Population).Padleft(15)}: {country.Name}");
+            }
+
             Console.WriteLine($"{countries.Count} countries");
 
 
