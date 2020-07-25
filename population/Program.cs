@@ -73,6 +73,14 @@ namespace population
                     (country.Population).Padleft(15)}: {country.Name}");
             }
 
+            foreach ( Country country in countries.OrderBy(x => x.Name), Take(10))
+            {
+                Console.WriteLine($"{PopulationFormatter.FormatPopulation
+                    (country.Population).Padleft(15)}: {country.Name}");
+            }
+
+
+
             Console.WriteLine($"{countries.Count} countries");
 
 
