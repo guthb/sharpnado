@@ -84,7 +84,7 @@ namespace population
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation
                     (country.Population).Padleft(15)}: {country.Name}");
             }
-
+                //both does the same
             var filteredCountries = countries.Where(x=>!x.Name.Contains(',')); //.Take(20)
             var filteredCountries2 = from countries in countries
                                      where !country in countries
