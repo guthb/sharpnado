@@ -85,7 +85,12 @@ namespace population
                     (country.Population).Padleft(15)}: {country.Name}");
             }
 
-            foreach ( Country country in countries.Where(x=>!x.Name.Contains(',')).Take(20));
+            var filteredCountries = countries.Where(x=>!x.Name.Contains(',')); //.Take(20)
+            var filteredCountries2 = from countries in countries
+                                     where !country in countries
+                                     select country;
+
+            foreach ( Country country in filteredCountries2);
             {
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation
                     (country.Population).Padleft(15)}: {country.Name}");
