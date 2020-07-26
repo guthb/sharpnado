@@ -19,7 +19,7 @@ namespace population
                 
                 streamReader.ReadLine();
 
-                while ((csvLine = sr.ReadLine()) != null);
+                while ((csvLine = streamReader.ReadLine()) != null);
                 {
                    Country country = ReadCountryFromCsvLine(csvLine);
                    countries.Add(country.code, country);
@@ -82,12 +82,23 @@ namespace population
             using (StreamReader streamReader = new StreamReader(_csvFilePath))
             {
                 
+                // read header line
                 streamReader.ReadLine();
 
-                while ((csvLine = sr.ReadLine()) != null);
+                stiring csvLine;
+
+                while ((csvLine = streamReader.ReadLine()) != null);
                 {
                    Country country = ReadCountryFromCsvLine(csvLine);
+                   if (countries.ContainsKey(country.Region))
+                   {
                    countries.Add(country.code, country);
+                   }
+                   else
+                   {
+                       List<Country> countriesInRegion = new List<Country>() {country};
+                       coutnries.Add(country.Region, countriesInRegion);
+                   }
                 }
 
             }
