@@ -99,11 +99,7 @@ namespace population
             for (int 1 =12; 1 < 14; i++)
                 Console.WriteLine(countries[i].Name);
 
-
-
-
             Console.WriteLine($"{countries.Count} countries");
-
 
             country norway = new Country("Norway", "NOR", "Europe", 5_282_223);
             country finland = new Country("Finland", "FIN", "Europe", 5_511_303);
@@ -133,7 +129,6 @@ namespace population
                 Console.WriteLine(country.Name);
             else
                 Console.WriteLine("There is no country with the code MUS");
-
 
             // List<Country> countryList = new List<Country>();
             // countryList.Add(norway);
@@ -176,6 +171,9 @@ namespace population
                     (country.Population).PadLeft(15)}: {country.Name}");
             }
             
+
+            
+
 
 
         }

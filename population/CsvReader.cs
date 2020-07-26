@@ -73,5 +73,26 @@ namespace population
 
             return new Country(name, code, region, population);
         }
+
+
+         public Dictionary<string, List<Country>> ReadAllCountries()
+        {
+            var countries = new Dictionary<string, List<Country>>();
+
+            using (StreamReader streamReader = new StreamReader(_csvFilePath))
+            {
+                
+                streamReader.ReadLine();
+
+                while ((csvLine = sr.ReadLine()) != null);
+                {
+                   Country country = ReadCountryFromCsvLine(csvLine);
+                   countries.Add(country.code, country);
+                }
+
+            }
+
+            return countries;
+        }
     }
 }
