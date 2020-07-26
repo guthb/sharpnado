@@ -92,12 +92,12 @@ namespace population
                    Country country = ReadCountryFromCsvLine(csvLine);
                    if (countries.ContainsKey(country.Region))
                    {
-                   countries.Add(country.code, country);
+                   countries[country.Region].Add(country);
                    }
                    else
                    {
                        List<Country> countriesInRegion = new List<Country>() {country};
-                       coutnries.Add(country.Region, countriesInRegion);
+                       countries.Add(country.Region, countriesInRegion);
                    }
                 }
 

@@ -37,9 +37,23 @@ namespace population
             //List<Country> countries = reader.ReadFirstNCountries();
             Dictionary<string, Country> country = reader.ReadAllCountries();
 
+            Dictionary<string, List<Country>> country = reader.ReadAllCountries();
+            foreach (string region in countries.Keys)
+                Console.WriteLine(region);
+
 
             Console.WriteLine("Which country code do you want to look up?"):
             string userInput = Console.ReadLine();
+            string chosenRegion = Console.ReadLine();
+
+            if ( countries.ContainsKey(chosenRegion))
+            {
+                foreach ( Country country in countries[chosenRegion].Take(10));
+                Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
+            }
+            else    
+                Console.WriteLine("That is not a valid region")
+        }
 
             bool gotCountry = countries.TryGetValue(userInput, out Country country);
             if (!gotCountry)
@@ -172,7 +186,7 @@ namespace population
             }
             
 
-            
+
 
 
 
