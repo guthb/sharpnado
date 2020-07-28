@@ -20,7 +20,7 @@ namespace TickTack
                 @continue = PlayMove(player);
                 if (!@continue)
                     return;
-                    player = 3 - player;
+                player = 3 - player;
             }
         }
 
@@ -40,7 +40,7 @@ namespace TickTack
             Console.Write($"{player}: Enter row comma column, eg. 3,3 >");
             string input = Console.ReadLine();
             string[] parts = input.Split(',');
-            if (p arts.Length !=2 )
+            if (parts.Length !=2 )
                 return false;
             int.TryParse(parts[0], out int row);
             int.TryParse(parts[1], out int column);
