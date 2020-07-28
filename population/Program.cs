@@ -67,8 +67,6 @@ namespace population
             countries.Insert(lilliputIndex, lilliput);
             countries.RemoveAt(lilliputIndex);
 
-
-
             foreach ( Country country in countries)
             {
                 Console.WriteLine($"{PopulationFormatter.FormatPopulation
