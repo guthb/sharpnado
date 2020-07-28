@@ -22,7 +22,7 @@ namespace TickTack
                 case Player.Tacks:
                     return "O";
                 case default:
-                    throw new Exception ("Invalid State")
+                    throw new Exception ("Invalid State");
             }
         }
     

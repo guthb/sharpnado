@@ -8,7 +8,7 @@ namespace TickTack
         {
             Game game = new Game();
             game.PlayGame();
-                Console.WriteLine("Game Over")
+                Console.WriteLine("Game Over");
         }
     }
 }

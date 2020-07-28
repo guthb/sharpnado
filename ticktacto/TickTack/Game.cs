@@ -40,12 +40,12 @@ namespace TickTack
             Console.Write($"{player}: Enter row comma column, eg. 3,3 >");
             string input = Console.ReadLine();
             string[] parts = input.Split(',');
-            if (parts.Length !=2)
+            if (p arts.Length !=2 )
                 return false;
-            int.TryParse(parts[0], out in row);
+            int.TryParse(parts[0], out int row);
             int.TryParse(parts[1], out int column);
 
-            if (row < || row > 3 || column < 1 || column >3)
+            if (row < 1 || row > 3 || column < 1 || column >3)
                 return false;
 
             if (_board[row -1][column - 1].Owner != Player.None)
