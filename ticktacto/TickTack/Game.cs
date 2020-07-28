@@ -2,12 +2,13 @@ namespace TickTack
 {
     class Game
     {
-        private Square[][] _board =
-        {
-                new square[3],
-                new square[3],
-                new square[3]
-        };
+        // private Square[][] _board =
+        // {
+        //         new square[3],
+        //         new square[3],
+        //         new square[3]
+        // };
+        private Square[,] _board = new Square[3,3];
 
         public void PlayGame()
         {
