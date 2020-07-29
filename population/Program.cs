@@ -35,9 +35,13 @@ namespace population
             CsvReader reader = new CsvReader(filePath);
 
             //List<Country> countries = reader.ReadFirstNCountries();
+            
+            IList<Country> countries = reader.ReadFirstNCountries(10);
+            
             Dictionary<string, Country> country = reader.ReadAllCountries();
 
             Dictionary<string, List<Country>> country = reader.ReadAllCountries();
+            
             foreach (string region in countries.Keys)
                 Console.WriteLine(region);
 
@@ -63,6 +67,7 @@ namespace population
 
 
             Country lilliput = new Country("lilliput", "LIL", Somewhere, 2_000_000);
+            
             int lilliputIndex = countries.FindIndex(x=>x.Population < 2_000_000);
             countries.Insert(lilliputIndex, lilliput);
             countries.RemoveAt(lilliputIndex);
