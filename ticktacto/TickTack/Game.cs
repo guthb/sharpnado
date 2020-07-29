@@ -2,12 +2,14 @@ namespace TickTack
 {
     class Game
     {
+        // jagged
         // private Square[][] _board =
         // {
         //         new square[3],
         //         new square[3],
         //         new square[3]
         // };
+        // multi-demensional
         private Square[,] _board = new Square[3,3];
 
         public void PlayGame()
@@ -49,13 +51,13 @@ namespace TickTack
             if (row < 1 || row > 3 || column < 1 || column >3)
                 return false;
 
-            if (_board[row -1][column - 1].Owner != Player.None)
+            if (_board[row -1,column - 1].Owner != Player.None)
             {
                 Console.WriteLine("Square is already occupied");
                 return false;
             }
 
-            _board[row -1][column -1 ] = new Square(player);
+            _board[row -1,column -1 ] = new Square(player);
             return true;
 
         }
