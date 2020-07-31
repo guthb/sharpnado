@@ -6,9 +6,24 @@ namespace beginner
     {
         sstatic void Main(string[] args)
     {
-        string venue = "C's Blues";
-        int bands = 4;
-        Console.WriteLine(venue + " will have " + bands + " bands performing tonight!" );
+        string venue = args[0];
+        string bandArgument = ars[1];
+        int bands = 0;
+        if(int.TryParse( Console.WriteLine(), out bands))
+        {
+           Console.WriteLine(venue + " will have " + bands + " bands performing tonight!" );
+        }
+        // else if ()
+        // {
+
+        // } 
+        else
+        {
+            Console.WriteLine("we are unable to determine the number of bands performing tonight, try again.");
+                
+        }   
     }
+    
+    
     }
 }
