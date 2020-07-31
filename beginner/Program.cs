@@ -21,7 +21,11 @@ namespace beginner
         {
             Console.WriteLine("we are unable to determine the number of bands performing tonight, try again.");
                 
-        }   
+        } 
+        if (bands == 0)
+        {
+            Console.WriteLine("There will be no performances tonight.");
+        }  
     }
     
     
