@@ -26,6 +26,14 @@ namespace beginner
         {
             Console.WriteLine("There will be no performances tonight.");
         }  
+        else if (bands == 1)
+        {
+            
+            Console.WriteLine("It's going to be a fantastic show tonight!");
+        }
+        else
+        {
+            Console.WriteLine("There will be plenty of thrilling performances to see tonight!");
     }
     
     
