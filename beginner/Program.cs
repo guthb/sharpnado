@@ -34,10 +34,20 @@ namespace beginner
         string venue = args[0]; // Sets the venue based on the command-line argument.
 
         Announce(venue);
-    }
+
+        VConsole.WriteLine("What is the name of your venue?");
+        Venue venue = new Venue();
+        venue.Name = "The Jazz Hut";
+        venue.Announce();
+    }   
         static void Announce( string venue)
     {
         Console.WriteLine( venue + " will have bands performing tonight.");
+        foreach(var band in Bands)
+        {
+            band.Announce();
+        }   
+    
     }
 
 }
