@@ -39,6 +39,9 @@ namespace beginner
         Venue venue = new Venue();
         venue.Name = "The Jazz Hut";
         venue.Announce();
+         string[] bandNames = {"Jazztallica", "Jazzadeth"};
+        venue.AddBand(bandNames);
+        venue.Announce();
     }   
         static void Announce( string venue)
     {
@@ -46,7 +49,15 @@ namespace beginner
         foreach(var band in Bands)
         {
             band.Announce();
-        }   
+        }  
+
+        public void AddBand(string[] names)
+    {
+        foreach(var name in names)
+        {
+            AddBand(name);
+        }    
+    }
     
     }
 
