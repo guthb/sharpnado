@@ -17,8 +17,7 @@ namespace acm.bl
                 }
         }
         
-        private string _lastName;
-        
+        private string _lastName;      
         public string _lastName
         {
             get
