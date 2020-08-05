@@ -62,7 +62,7 @@ namespace acm.bl.test
         public void StaticTest()
         {
             //-- Arrange
-            var c1 = new Customer();
+            var c1 = new Customer();            
             c1.FirstName = "Bilbo";
             Customer.InstanceCount += 1;
 
