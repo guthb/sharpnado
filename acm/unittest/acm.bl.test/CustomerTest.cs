@@ -23,5 +23,22 @@ namespace acm.bl.test
             //-- Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void FullNameTestValid()
+        {
+            //-- Arrange
+            Customer customer = new Customer
+            {
+                LastName = "Baggins"
+            };
+            string expected "Baggins";
+         
+            // -- Act
+            string actual = customer.FullName;
+
+            //-- Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
