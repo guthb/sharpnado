@@ -13,7 +13,16 @@ namespace acm.bl
         {
             get
                 {
-                    return LastName + ", " + FirstName;
+                    string fullName = LastName;
+                    if ( !string.IsNullOrWhiteSpace(FirstName))
+                    {
+                        if (!string.IsNullOrWhiteSpace(fullName))
+                        {
+                            fullName += ", ";
+                        }
+                        fullName += FirstName;
+                    }
+                    return fullName
                 }
         }
         
