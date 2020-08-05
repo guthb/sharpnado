@@ -25,7 +25,7 @@ namespace acm.bl.test
         }
 
         [TestMethod]
-        public void FullNameTestValid()
+        public void FullNameFirstNameEmpty()
         {
             //-- Arrange
             Customer customer = new Customer
@@ -33,6 +33,23 @@ namespace acm.bl.test
                 LastName = "Baggins"
             };
             string expected "Baggins";
+         
+            // -- Act
+            string actual = customer.FullName;
+
+            //-- Assert
+            Assert.AreEqual(expected, actual);
+        }
+        
+        TestMethod]
+        public void FullNameLastNameEmpty()
+        {
+            //-- Arrange
+            Customer customer = new Customer
+            {
+                FirstName = "Bilbo",
+            };
+            string expected "Bilbo";
          
             // -- Act
             string actual = customer.FullName;
