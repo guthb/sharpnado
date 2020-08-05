@@ -43,7 +43,7 @@ namespace acm.bl
 
         /// <summary>
         /// Validates the customer data
-        /// <summary>
+        /// </summary>
         /// <returns></returns>
         public bool Validate()
         {
@@ -52,7 +52,28 @@ namespace acm.bl
             if (string.IsNullOrWhiteSpace(LastName)) isValid = false;
             if (string.IsNullOrWhiteSpace(EmailAddress)) isValid = false;
 
-            return isValid
+            return isValid;
+        }
+
+        /// <summary>
+        /// Retrive one customer
+        /// </summary>
+        public Customer Retrive(int customerId)
+        {
+            //Code that retrieves the defined customer
+
+            return new Customer();
+        }
+
+        /// <summary>
+        /// Saves the current cutomer.
+        /// </summary>
+        /// <returns></returns>
+        public bool Save()
+        {
+            // Code that save the defined customer
+
+            return true;
         }
 
     }
