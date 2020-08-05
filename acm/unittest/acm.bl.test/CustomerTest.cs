@@ -41,7 +41,7 @@ namespace acm.bl.test
             Assert.AreEqual(expected, actual);
         }
         
-        TestMethod]
+        [TestMethod]
         public void FullNameLastNameEmpty()
         {
             //-- Arrange
@@ -57,5 +57,28 @@ namespace acm.bl.test
             //-- Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void StaticTest()
+        {
+            //-- Arrange
+            var c1 = new Customer();
+            c1.FirstName = "Bilbo";
+            Customer.InstanceCount += 1;
+
+            var c2 = new Customer();
+            c2.FirstName = "Frodo"
+            Customer.InstanceCount += 1;
+
+            var c3 = new Customer();
+            c3.FirstName = "Rosie"
+            Customer.InstanceCount += 1;
+
+            //-- Act
+
+            //-- Assert
+            Assert.AreEqual(3, Customer.InstanceCount);
+        }
+
     }
 }
