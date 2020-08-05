@@ -22,9 +22,11 @@ namespace acm.bl
                         }
                         fullName += FirstName;
                     }
-                    return fullName
+                    return fullName;
                 }
         }
+
+        public static int InstnceCount {get; set;}
         
         private string _lastName;      
         public string _lastName
