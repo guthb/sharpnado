@@ -80,5 +80,27 @@ namespace acm.bl.test
             Assert.AreEqual(3, Customer.InstanceCount);
         }
 
+        [TestMethod]
+        public void ValidateValid()
+        {
+            //-- Arrange
+            var customer = new Customer
+            {
+                LastName = "Baggins";
+                EmailAddress = "fbaggins@hobbiton.me"
+            };
+
+            var expected = true;
+
+            //-- Act
+            var actual = customer.Validate();
+
+            //-- Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
+
     }
 }

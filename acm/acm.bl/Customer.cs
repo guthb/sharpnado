@@ -41,19 +41,6 @@ namespace acm.bl
             }
         }
 
-        /// <summary>
-        /// Validates the customer data
-        /// </summary>
-        /// <returns></returns>
-        public bool Validate()
-        {
-            var isValid = true;
-
-            if (string.IsNullOrWhiteSpace(LastName)) isValid = false;
-            if (string.IsNullOrWhiteSpace(EmailAddress)) isValid = false;
-
-            return isValid;
-        }
 
         /// <summary>
         /// Retrive one customer
@@ -84,6 +71,20 @@ namespace acm.bl
             // Code that save the defined customer
 
             return true;
+        }
+
+        /// <summary>
+        /// Validates the customer data
+        /// </summary>
+        /// <returns></returns>
+        public bool Validate()
+        {
+            var isValid = true;
+
+            if (string.IsNullOrWhiteSpace(LastName)) isValid = false;
+            if (string.IsNullOrWhiteSpace(EmailAddress)) isValid = false;
+
+            return isValid;
         }
 
     }
