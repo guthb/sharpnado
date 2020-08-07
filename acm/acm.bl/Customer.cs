@@ -2,7 +2,15 @@ namespace acm.bl
 {
     public class Customer
     {
-        
+        public Customer //constructor, default
+        {
+            
+        }
+        public Customer(int customerId)
+        {
+            CustomerId = cutomerId;
+        }
+
         public int CustomerId {get; private set;}
         
         public string EmailAddress {get; set;}
@@ -28,7 +36,7 @@ namespace acm.bl
 
         public static int InstnceCount {get; set;}
         
-        private string _lastName;      
+        //private string _lastName;      
         public string _lastName
         {
             get
