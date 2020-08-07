@@ -66,6 +66,16 @@ namespace acm.bl
         }
 
         /// <summary>
+        /// Retrive allcustomer
+        /// </summary>
+        public List<Customer> Retrive()
+        {
+            //Code that retrieves all of the customers
+
+            return new List<Customer>();
+        }
+
+        /// <summary>
         /// Saves the current cutomer.
         /// </summary>
         /// <returns></returns>
