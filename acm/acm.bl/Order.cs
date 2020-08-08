@@ -25,5 +25,29 @@ namespace acm.bl
             return new Order();
         }
 
+         /// <summary>
+        /// Saves the current order.
+        /// </summary>
+        public bool Save()
+        {
+            //Code that saves the order
+
+            return true;
+        }
+
+        /// <summary>
+        /// Validates the Order.
+        /// </summary>
+        /// <returns></returns>
+        public bool Valdiate()
+        {
+            var isValid = true;
+
+            if (OrderDate == null) isValid = false;
+
+            return isValid;
+        }
+
+
     }
 }
