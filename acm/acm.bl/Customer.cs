@@ -6,6 +6,7 @@ namespace acm.bl
         {
             
         }
+        
         public Customer(int customerId)
         {
             CustomerId = cutomerId;
