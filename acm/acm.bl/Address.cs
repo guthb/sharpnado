@@ -25,7 +25,12 @@ namespace acm.bl
         /// Validates the address data.
         /// </summary>
         /// <returns></returns>
-
+        public bool Validate();
+        {
+            var isValid = true;
+            if (PostalCode == null) isValid = true;
+            return isValid;
+        }
 
 
 
