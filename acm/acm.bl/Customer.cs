@@ -50,37 +50,38 @@ namespace acm.bl
             }
         }
 
+// *** moved to the repository
+        // /// <summary>
+        // /// Retrive one customer
+        // /// </summary>
+        // public Customer Retrive(int customerId)
+        // {
+        //     //Code that retrieves the defined customer
 
-        /// <summary>
-        /// Retrive one customer
-        /// </summary>
-        public Customer Retrive(int customerId)
-        {
-            //Code that retrieves the defined customer
+        //     return new Customer();
+        // }
 
-            return new Customer();
-        }
+        // /// <summary>
+        // /// Retrive allcustomer
+        // /// </summary>
+        // public List<Customer> Retrive()
+        // {
+        //     //Code that retrieves all of the customers
 
-        /// <summary>
-        /// Retrive allcustomer
-        /// </summary>
-        public List<Customer> Retrive()
-        {
-            //Code that retrieves all of the customers
+        //     return new List<Customer>();
+        // }
 
-            return new List<Customer>();
-        }
+        // /// <summary>
+        // /// Saves the current cutomer.
+        // /// </summary>
+        // /// <returns></returns>
+        // public bool Save()
+        // {
+        //     // Code that save the defined customer
 
-        /// <summary>
-        /// Saves the current cutomer.
-        /// </summary>
-        /// <returns></returns>
-        public bool Save()
-        {
-            // Code that save the defined customer
-
-            return true;
-        }
+        //     return true;
+        // }
+// *****
 
         /// <summary>
         /// Validates the customer data
