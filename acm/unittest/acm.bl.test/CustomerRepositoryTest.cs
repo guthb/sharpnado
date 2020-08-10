@@ -16,8 +16,10 @@ namespace acm.bl.test
                 LastName = "Baggins"
             };
             // --Act
-
+            var actual = customerRepository.Retrive(1);
+            
             // --Assert
+            Assert.AreEqual(expected, actual);
 
         }
     }
