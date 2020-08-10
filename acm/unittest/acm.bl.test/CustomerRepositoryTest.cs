@@ -19,7 +19,10 @@ namespace acm.bl.test
             var actual = customerRepository.Retrive(1);
             
             // --Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected.CustmerId, actual.CustmerId);
+            Assert.AreEqual(expected.EmailAddress, actual.EmailAddress);
+            Assert.AreEqual(expected.FirstName, actual.FirstName);
+            Assert.AreEqual(expected.LastName, actual.LastName);
 
         }
     }
