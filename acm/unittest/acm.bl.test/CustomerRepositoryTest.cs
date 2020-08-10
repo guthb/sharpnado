@@ -8,7 +8,14 @@ namespace acm.bl.test
         public void RetrieveValid()
         {
             // --Arrange
-
+            var CustomerRepository = new CustomerRepository();
+            var expected = new Customer()
+            {
+                customerId = 1,
+                EmailAddress = "fbaggins@hobbiton.me",
+                FirstName = "Frodo",
+                LastName = "Baggins"
+            };
             // --Act
 
             // --Assert
