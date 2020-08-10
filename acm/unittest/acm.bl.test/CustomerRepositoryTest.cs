@@ -9,9 +9,8 @@ namespace acm.bl.test
         {
             // --Arrange
             var CustomerRepository = new CustomerRepository();
-            var expected = new Customer()
+            var expected = new Customer(1)
             {
-                customerId = 1,
                 EmailAddress = "fbaggins@hobbiton.me",
                 FirstName = "Frodo",
                 LastName = "Baggins"
