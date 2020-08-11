@@ -25,6 +25,15 @@ namespace acm.bl
             return product;
 
         }
+        /// <summary>
+        /// Saves the current product.
+        /// </summary>
+        public bool Save()
+        {
+            //Code that saves the order item
+
+            return true;
+        }
         
     }
 }
