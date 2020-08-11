@@ -19,6 +19,16 @@ namespace acm.bl
                 // Use current year
                 order.OrderDate = new DateTimeOffset(DateTime.Now.Year, 8, 11, 10, 00, 00, new TimeSpan(7, 0, 0));
             }
+            return order;
+        }
+        /// <summary>
+        /// Saves the current order.
+        /// </summary>
+        public bool Save()
+        {
+            //Code that saves the order
+
+            return true;
         }
         
 
