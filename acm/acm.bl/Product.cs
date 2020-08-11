@@ -16,25 +16,25 @@ namespace acm.bl
         public int ProductId {get; set;}
         public string ProductName {get; set;}
 
-        /// <summary>
-        /// Retrieve one Product.
-        /// </summary>
-        public Product Retrieve(int productId)
-        {
-            // Code that retrives the defined product
+        // /// <summary>
+        // /// Retrieve one Product.
+        // /// </summary>
+        // public Product Retrieve(int productId)
+        // {
+        //     // Code that retrives the defined product
 
-            return new Product();
-        }
+        //     return new Product();
+        // }
 
-        /// <summary>
-        /// Saves the current prodcut.
-        /// </summary>
-        public bool Save()
-        {
-            //Code that saves the defined product
+        // /// <summary>
+        // /// Saves the current prodcut.
+        // /// </summary>
+        // public bool Save()
+        // {
+        //     //Code that saves the defined product
 
-            return true;
-        }
+        //     return true;
+        // }
 
         /// <summary>
         /// Validates the product data.
