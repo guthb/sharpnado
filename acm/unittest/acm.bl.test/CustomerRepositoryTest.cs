@@ -1,7 +1,8 @@
+using acm.bl;
 
 namespace acm.bl.test
 {
-    [TestClass]
+    [TestClass()]
     public class CustomerRepositoryTest
     {
         [TestMethod]
