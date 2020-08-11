@@ -15,25 +15,25 @@ namespace acm.bl
         public int OrderId {get; private set;}
 
 
-        // <summary>
-        /// Retreive one oder.
-        /// </summary>
-        public Order Retreive(int orderId)
-        {
-            // Code that retrieve(int orderId)
+        // // <summary>
+        // /// Retreive one oder.
+        // /// </summary>
+        // public Order Retreive(int orderId)
+        // {
+        //     // Code that retrieve(int orderId)
 
-            return new Order();
-        }
+        //     return new Order();
+        // }
 
-         /// <summary>
-        /// Saves the current order.
-        /// </summary>
-        public bool Save()
-        {
-            //Code that saves the order
+        //  /// <summary>
+        // /// Saves the current order.
+        // /// </summary>
+        // public bool Save()
+        // {
+        //     //Code that saves the order
 
-            return true;
-        }
+        //     return true;
+        // }
 
         /// <summary>
         /// Validates the Order.
