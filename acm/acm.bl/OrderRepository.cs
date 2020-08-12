@@ -24,7 +24,7 @@ namespace acm.bl
         /// <summary>
         /// Saves the current order.
         /// </summary>
-        public bool Save()
+        public bool Save(Order order)
         {
             //Code that saves the order
 
