@@ -19,10 +19,10 @@ namespace acm.bl.test
             };
 
             // --Act
-
+            var actual = orderRepository.Retrieve(10);
 
             // --Assert
-            
+            Assert.AreEqual(expected.OrderDate, Actual.OrderDate);
         }
     }
 }
