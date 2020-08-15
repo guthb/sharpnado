@@ -2,7 +2,7 @@ namespace acm.bl
 {
     public class Customer
     {
-        public Customer //constructor, default
+        public Customer(): this(0) //constructor, default
         {
             
         }
