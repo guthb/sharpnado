@@ -1,3 +1,5 @@
+using System;
+
 namespace acm.bl
 {
     public class AddressRepository
@@ -24,6 +26,40 @@ namespace acm.bl
         return address;
 
     }
+
+    public IEnumerable<Address> RetriveByCustomerId(int CustomerId)
+    {
+        // code that retrieves defined addresses
+
+        // hard code test data
+        var addressList = new List<Address>();
+        Address address = new Address(1);
+        {
+            AddressType = 1,
+            StreetLine1 ="Bag End";
+            StreetLine2 = "Bagshot row";
+            City = "Hobbiton";
+            State="Shire";
+            Country ="middle Earth";
+            PostalCode = "114";
+        }
+        addressList.Add(address);
+
+        address = new Address(2)
+        {
+            AddressType = 2,
+            StreetLine1 ="Green Dragon";
+            StreetLine2 = "Bywater";
+            City = "Hobbiton";
+            State="Shire";
+            Country ="middle Earth";
+            PostalCode = "146";
+        }
+        addressList.Add(address);
+        return addressList;
+    }
+
+
     /// <summary>
         ///Saves the current address.
         /// </summary>
