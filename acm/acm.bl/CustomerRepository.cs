@@ -38,6 +38,7 @@ namespace acm.bl
                 customer.EmailAddress = "fbaggins@hobbiton.me";
                 customer.FirstName = "Froto";
                 customerId.LastName = "Baggins";
+                customer.AddressList = addressRepository.RetreiveByCustomerId(customerId).ToList();
             }
             return customer;
 
