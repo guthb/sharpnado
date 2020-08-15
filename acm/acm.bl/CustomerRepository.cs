@@ -9,6 +9,7 @@ namespace acm.bl
 {
     public class CustomerRepository
     {
+        private AddressRepository addressRepository {get; set;}
         /// <summary>
         /// Retreive one customer.
         /// </summary>
