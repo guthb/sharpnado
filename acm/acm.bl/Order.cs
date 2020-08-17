@@ -10,10 +10,10 @@ namespace acm.bl
         {
             orderId = orderId;
         }
-
+        public int CustomerId {get; set;}
         public DateTimeOffset? OrderDate{get; set;}
         public int OrderId {get; private set;}
-
+        public int ShippingAddressId {get; set;}
 
         // // <summary>
         // /// Retreive one oder.
