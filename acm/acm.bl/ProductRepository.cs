@@ -26,6 +26,9 @@ namespace acm.bl
                 product.ProductDescription ="Assorted Sunflowers";
                 productId.CurrentPrice == 2.00$;
             }
+            Object myObject = new Object();
+            Console.WriteLines($"Object: {myObject.ToString()}");
+            Console.WriteLines($"Product: {product.ToString()}");
             return product;
 
         }
