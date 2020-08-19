@@ -37,9 +37,26 @@ namespace acm.bl
         /// </summary>
         public bool Save()
         {
-            //Code that saves the order item
-
-            return true;
+            var succees = true;
+            if(product.HasChanges)
+            {
+                if(product.IsValid)
+                {
+                    if(product.IsNew)
+                    {
+                        // call stored proc
+                    }
+                    else
+                    {
+                        // call update stored prc
+                    }
+                }
+                else
+                {
+                    succees = false;
+                }
+            }
+            return succees;
         }
         
     }

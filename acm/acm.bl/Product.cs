@@ -40,7 +40,7 @@ namespace acm.bl
         /// Validates the product data.
         /// </summary>
         /// <returns></returns>
-        public bool Valdiate()
+        public override bool Valdiate()
         {
             var isValid = true;
 
