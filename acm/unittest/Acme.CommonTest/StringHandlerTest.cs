@@ -8,7 +8,7 @@ namespace Acme.CommonTest
     public class StringHandlerTest
     {   
         [TestMethod]
-        public void TestMethod1()
+        public void InsertSpacesTestValid()
         {
             // Arrange
             var source = "SonicScrewdriver";
