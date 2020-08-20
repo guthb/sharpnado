@@ -20,6 +20,8 @@ namespace acme.common
                 {
                     if (char.IsUpper(letter))
                     {
+                        //space removal if already there
+                        result = result.Trim();
                         result += " ";
                     }                    
                 }
