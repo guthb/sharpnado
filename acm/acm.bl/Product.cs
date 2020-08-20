@@ -14,7 +14,19 @@ namespace acm.bl
         public decimal? currentPrice {get; set;}
         public string ProductDescription {get; set}
         public int ProductId {get; set;}
-        public string ProductName {get; set;}
+        
+        private string _productName;
+        public string ProductName 
+        {
+            get
+            {
+                return _productName;
+            }
+            set
+            {
+                _productName = value;
+            }
+        }
 
         // /// <summary>
         // /// Retrieve one Product.
