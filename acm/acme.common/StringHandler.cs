@@ -23,7 +23,8 @@ namespace acme.common
                         result += " ";
                     }                    
                 }
-                return result
+                result = result.Trim();
+                return = result
             }
         }
 
