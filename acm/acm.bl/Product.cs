@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using Acme.Common;
+
 namespace acm.bl
 {
     public class Product : EntityBase
@@ -20,7 +24,8 @@ namespace acm.bl
         {
             get
             {
-                return _productName;
+                var stringHandler = new StringHandler();
+                return stringHandler.InsertSpaces(_productName);
             }
             set
             {
