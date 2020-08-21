@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace acme.common
 {
-    public class StringHandler
+    public static class StringHandler
     {
         
-        public string InsertSpaces(string source)
+        public static string InsertSpaces(string source)
         {
             string result = string.Empty;
             if (!String.IsNullOrWhiteSpace(source))
