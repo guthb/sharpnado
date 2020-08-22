@@ -10,7 +10,12 @@ namespace acme.common
 {
     public static class StringHandler
     {
-        
+        /// <summary>
+        /// Inserts spaces before each capital letter in a string
+        /// </summary>
+        /// <param name= "source"></param>
+        /// <returns></returns>
+
         public static string InsertSpaces(this string source)
         {
             string result = string.Empty;
