@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace acm.bl
 {
-    public class Customer
+    public class Customer :EntityBase
     {
-        public Customer(): this(0) //constructor, default
+        public Customer(): this(0) 
         {
             
         }
@@ -91,11 +91,16 @@ namespace acm.bl
         // }
 // *****
 
+        public strong Log() =>
+        $"{CustomerId}: {FullName} Email: {EmailAddress} Status: {EntiryState()}";
+
+        public override string ToString() => FullName;
+
         /// <summary>
         /// Validates the customer data
         /// </summary>
         /// <returns></returns>
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
