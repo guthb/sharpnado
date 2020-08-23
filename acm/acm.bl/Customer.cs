@@ -92,7 +92,7 @@ namespace acm.bl
 // *****
 
         public strong Log() =>
-        $"{CustomerId}: {FullName} Email: {EmailAddress} Status: {EntiryState()}";
+        $"{CustomerId}: {FullName} Email: {EmailAddress} Status: {EntityState.ToString()}";
 
         public override string ToString() => FullName;
 
