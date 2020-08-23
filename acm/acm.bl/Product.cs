@@ -32,6 +32,11 @@ namespace acm.bl
             }
         }
 
+        public strong Log() =>
+        $"{ProductId}: {ProductName} Email: {ProductDescription} Status: {EntityState.ToString()}";
+
+        Public override string ToString() => ProductName;
+
         // /// <summary>
         // /// Retrieve one Product.
         // /// </summary>
