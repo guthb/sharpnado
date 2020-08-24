@@ -9,11 +9,11 @@ namespace acme.common
 {
     public static class LoggingService
     {
-        public static void WriteToFile(List<Object> itemsToLog)
+        public static void WriteToFile(List<ILoggable> itemsToLog)
         {
             foreach (var itme in itemsToLog)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(item.Log());
             }
         }
     }
