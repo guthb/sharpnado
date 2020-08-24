@@ -4,7 +4,7 @@ using Acme.Common;
 
 namespace acm.bl
 {
-    public class Product : EntityBase
+    public class Product : EntityBase, ILoggable
     {
         public Product()
         {
@@ -15,12 +15,12 @@ namespace acm.bl
             ProductId = productID;
         }
 
-        public decimal? currentPrice {get; set;}
-        public string ProductDescription {get; set}
-        public int ProductId {get; set;}
-        
+        public decimal? currentPrice { get; set; }
+        public string ProductDescription { get; set}
+        public int ProductId { get; set; }
+
         private string _productName;
-        public string ProductName 
+        public string ProductName
         {
             get
             {
@@ -35,7 +35,7 @@ namespace acm.bl
         public strong Log() =>
         $"{ProductId}: {ProductName} Email: {ProductDescription} Status: {EntityState.ToString()}";
 
-        Public override string ToString() => ProductName;
+        public override string ToString() => ProductName;
 
         // /// <summary>
         // /// Retrieve one Product.

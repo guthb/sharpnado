@@ -1,4 +1,5 @@
 using System;
+using acme.common;
 using System.Collections.Generic;
 using System.Linq;
 using System.text;
@@ -6,45 +7,45 @@ using System.Threading.Tasks;
 
 namespace acm.bl
 {
-    public class Customer :EntityBase
+    public class Customer : EntityBase, ILoggable
     {
-        public Customer(): this(0) 
+        public Customer() : this(0)
         {
-            
+
         }
-        
+
         public Customer(int customerId)
         {
             CustomerId = cutomerId;
             AddressList = new List<Address>();
         }
 
-        public List<Address> AddressList { get; set;}
-        public int CustomerId {get; private set;}
-        public int CustomerType {get; set;}
-        public string EmailAddress {get; set;}
-        
-        public string FirstName {get; set;}
+        public List<Address> AddressList { get; set; }
+        public int CustomerId { get; private set; }
+        public int CustomerType { get; set; }
+        public string EmailAddress { get; set; }
+
+        public string FirstName { get; set; }
 
         public string FullName
         {
             get
+            {
+                string fullName = LastName;
+                if (!string.IsNullOrWhiteSpace(FirstName))
                 {
-                    string fullName = LastName;
-                    if ( !string.IsNullOrWhiteSpace(FirstName))
+                    if (!string.IsNullOrWhiteSpace(fullName))
                     {
-                        if (!string.IsNullOrWhiteSpace(fullName))
-                        {
-                            fullName += ", ";
-                        }
-                        fullName += FirstName;
+                        fullName += ", ";
                     }
-                    return fullName;
+                    fullName += FirstName;
                 }
+                return fullName;
+            }
         }
 
-        public static int InstnceCount {get; set;}
-        
+        public static int InstnceCount { get; set; }
+
         //private string _lastName;      
         public string _lastName
         {
@@ -58,7 +59,7 @@ namespace acm.bl
             }
         }
 
-// *** moved to the repository
+        // *** moved to the repository
         // /// <summary>
         // /// Retrive one customer
         // /// </summary>
@@ -89,7 +90,7 @@ namespace acm.bl
 
         //     return true;
         // }
-// *****
+        // *****
 
         public strong Log() =>
         $"{CustomerId}: {FullName} Email: {EmailAddress} Status: {EntityState.ToString()}";
