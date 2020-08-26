@@ -21,7 +21,7 @@ namespace linq
 
             select user;
 
-            //userQuery.Count();
+            //return userQuery.Count();
 
             foreach (var user in userQuery)
             {
@@ -41,11 +41,24 @@ namespace linq
                     Console.WriteLine(user);
                 }
             }
-            
-            
-            )
-        
-        
+
+            public static partial class Example
+        {
+            public static int GetNumbers()
+            {
+                var numbers = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+                var query =
+                from number in numbers
+                where number > 6
+                select number;
+
+
+            }
+
         }
+    }
+
+
+}
     }
 }
