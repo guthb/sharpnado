@@ -1,5 +1,8 @@
 ﻿using System;
-using Linq;
+using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
+
 
 namespace linq
 {
@@ -41,24 +44,41 @@ namespace linq
                     Console.WriteLine(user);
                 }
             }
-
-            public static partial class Example
+        }
+        public static partial class Example
         {
             public static int GetNumbers()
             {
                 var numbers = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
                 var query =
                 from number in numbers
-                where number > 6
+                orderby number ascending
+                //where number > 6
                 select number;
+
+                return query;
 
 
             }
 
+            public static void GetUsers(List<User> users)
+            {
+                var userQuery = from user in users
+                                group user by user.Active into userGroup
+                                select userGroup;
+
+                foreach (var userGroup in userQuery)
+                {
+                    Console.WriteLine("Active: {0}", userGroup.Key);
+                    foreach (var user in userGroup)
+                    {
+                        Console.WriteLine(user.Name);
+                    }
+                }
+            }
+
         }
     }
+}
 
 
-}
-    }
-}
