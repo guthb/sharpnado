@@ -22,7 +22,13 @@ namespace Introduction
             var query = from file in new DirectoryInfo(path).GetFiles()
                         orderby file.Length descending
                         select file;
-            foreach (var file in query.Take(5))
+
+            //or
+            var query2 = new DirectoryInfo(path).GetFiles()
+                .OrderBy(f => f.Length)
+                .Take(5);
+
+            foreach (var file in query)
             {
                 Console.WriteLine($"{file.Length,-20} : {file.Length,10:N0}");
             }
