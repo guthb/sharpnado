@@ -24,9 +24,11 @@ namespace LinqSamples
             };
 
 
-            foreach (var person in developers)
+            Console.WriteLine(sales.Count());
+            IEnumerable<Employee> enumerator = sales.GetEnumerator();
+            while (enumerator.MoveNext())
             {
-                Console.WriteLine(person.Name);
+                Console.WriteLine(enumerator.Current.Name);
             }
 
 
