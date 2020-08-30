@@ -10,6 +10,9 @@ namespace LinqSamples
     {
         static void Main(string[] args)
         {
+
+            Func<int, int> f = Square;
+
             //Employee[] developers = new Employee[]
             IEnumerable<Employee> developers = new Employee[]
                 {
@@ -43,8 +46,7 @@ namespace LinqSamples
 
             //refactor to be shorter
             foreach (var employee in developers.Where(
-                e => e.Name.StartsWith("S")
-               ))
+                e => e.Name.StartsWith("S")))
             {
                 Console.WriteLine(employee.Name);
             }
@@ -65,6 +67,12 @@ namespace LinqSamples
         private static bool NameStartsWithS(Employee employee)
         {
             return employee.Name.StartsWith("S");
+        }
+
+
+        private static int Square(int arg)
+        {
+            throw new NotFiniteNumberException();
         }
     }
 }
