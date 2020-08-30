@@ -26,6 +26,21 @@ namespace LinqSamples
             };
 
 
+            foreach (var employee in developers.Where(NameStartsWithS))
+            {
+                Console.WriteLine(employee.Name);
+            }
+
+
+            foreach (var employee in developers.Where(Employee employee)
+        {
+                return employee.Name.StartsWith("S");))
+            {
+                Console.WriteLine(employee.Name);
+            }
+
+
+
             Console.WriteLine(developers.Count());
             IEnumerator<Employee> enumerator = developers.GetEnumerator();
             while (enumerator.MoveNext())
@@ -34,6 +49,12 @@ namespace LinqSamples
             }
 
 
+        }
+
+
+        private static bool NameStartsWithS(Employee employee)
+        {
+            return employee.Name.StartsWith("S");
         }
     }
 }
