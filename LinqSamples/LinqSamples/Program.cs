@@ -11,7 +11,11 @@ namespace LinqSamples
         static void Main(string[] args)
         {
 
-            Func<int, int> f = Square;
+            Func<int, int> square = x => x * x;
+            Console.WriteLine(square(3));
+
+            Func<int, int, int> add = (x, y) => x + y;
+            Console.WriteLine(square(add(3,5)));
 
             //Employee[] developers = new Employee[]
             IEnumerable<Employee> developers = new Employee[]
@@ -70,9 +74,9 @@ namespace LinqSamples
         }
 
 
-        private static int Square(int arg)
-        {
-            throw new NotFiniteNumberException();
-        }
+        //private static int Square(int arg)
+        //{
+        //    throw new NotFiniteNumberException();
+        //}
     }
 }
