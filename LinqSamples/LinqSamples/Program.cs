@@ -14,7 +14,17 @@ namespace LinqSamples
             Func<int, int> square = x => x * x;
             Console.WriteLine(square(3));
 
-            Func<int, int, int> add = (x, y) => x + y;
+            Func<int, int, int> add = (int x, int y) =>
+            {
+                int temp = x + y;
+                return temp;
+
+            };
+
+            Action<int> write = x => Console.WriteLine(x);
+            write(square(add(3,5)));
+
+
             Console.WriteLine(square(add(3,5)));
 
             //Employee[] developers = new Employee[]
