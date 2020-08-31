@@ -43,11 +43,16 @@ namespace LinqSamples
             };
 
 
-            foreach (var employee in developers.Where(NameStartsWithS))
+            foreach (var employee in developers)
             {
                 Console.WriteLine(employee.Name);
             }
 
+
+            foreach (var employee in developers.Where(NameStartsWithS))
+            {
+                Console.WriteLine(employee.Name);
+            }
 
             foreach (var employee in developers.Where(
                 delegate (Employee employee)
@@ -61,6 +66,13 @@ namespace LinqSamples
             //refactor to be shorter
             foreach (var employee in developers.Where(
                 e => e.Name.StartsWith("S")))
+            {
+                Console.WriteLine(employee.Name);
+            }
+
+
+            foreach (var employee in developers.Where(e=>e.Name.Length == 5)
+                .OrderBy(e => e.Name))
             {
                 Console.WriteLine(employee.Name);
             }
