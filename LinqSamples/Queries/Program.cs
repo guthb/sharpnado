@@ -27,7 +27,8 @@ namespace Queries
                 Console.WriteLine(movie.Title);
             }
 
-            var query2 = movies.Filter(m => m.Year > 2000);
+            //var query2 = movies.Filter(m => m.Year > 2000);
+            var query2 = movies.Where(m => m.Year > 2000);
 
             foreach (var movie in query)
             {
