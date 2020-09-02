@@ -14,27 +14,33 @@ namespace Queries
                 new Movie { Title = "The Kings Speach", Rating = 8.0f, Year =2010},
                 new Movie { Title = "Casablanca", Rating = 8.5f, Year =1942},
                 new Movie { Title = "Star Wars V", Rating = 8.7f, Year =1980}
-
-
             };
 
 
             //extentions methods
-            var query = movies.Where(m => m.Year > 2000);
+            //var query = movies.Where(m => m.Year > 2000);
 
-            foreach (var movie in query)
+            //foreach (var movie in query)
+            //{
+            //    Console.WriteLine(movie.Title);
+            //}
+
+            var query2 = movies.Filter(m => m.Year > 2000);
+
+            query2 = query2.Take(1);
+            //var query2 = movies.Where(m => m.Year > 2000);
+
+            //foreach (var movie in query)
+            //{
+            //    Console.WriteLine(movie.Title);
+            //}
+
+
+            var enumerator = query2.GetEnumerator();
+            while (enumerator.MoveNext())
             {
-                Console.WriteLine(movie.Title);
+                Console.WriteLine(enumerator.Current.Title);
             }
-
-            //var query2 = movies.Filter(m => m.Year > 2000);
-            var query2 = movies.Where(m => m.Year > 2000);
-
-            foreach (var movie in query)
-            {
-                Console.WriteLine(movie.Title);
-            }
-
 
 
         }

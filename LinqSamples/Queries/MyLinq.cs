@@ -18,7 +18,7 @@ namespace Queries
                 if (predicate(item))
                 {
                     //result.Add(item);
-                    yield return item;
+                    yield return item;  //deferred execution
                 }
             }
 
