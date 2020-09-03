@@ -35,7 +35,12 @@ namespace Queries
             //    Console.WriteLine(movie.Title);
             //}
 
+            //var query2 = Enumerable.Empty<Movie>();
+
+            
+        
             Console.WriteLine(query2.Count());
+          
 
             var enumerator = query2.GetEnumerator();
             while (enumerator.MoveNext())
