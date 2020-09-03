@@ -35,6 +35,7 @@ namespace Queries
             //    Console.WriteLine(movie.Title);
             //}
 
+            Console.WriteLine(query2.Count());
 
             var enumerator = query2.GetEnumerator();
             while (enumerator.MoveNext())
