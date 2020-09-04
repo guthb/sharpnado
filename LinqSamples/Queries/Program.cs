@@ -25,10 +25,9 @@ namespace Queries
             //    Console.WriteLine(movie.Title);
             //}
 
-            var query2 = movies.Filter(m => m.Year > 2000).ToList();
+            //var query2 = movies.Filter(m => m.Year > 2000).ToList();
 
             //query2 = query2.Take(1);
-            //var query2 = movies.Where(m => m.Year > 2000);
 
             //foreach (var movie in query)
             //{
@@ -37,8 +36,11 @@ namespace Queries
 
             //var query2 = Enumerable.Empty<Movie>();
 
-            
-        
+            //var query2 = movies.Where(m => m.Year > 2000).ToList();
+            var query2 = movies.Where(m => m.Year > 2000)
+                .OrderByDescending(m => m.Rating);
+
+
             Console.WriteLine(query2.Count());
           
 
