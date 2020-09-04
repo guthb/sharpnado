@@ -41,6 +41,11 @@ namespace Queries
                 .OrderByDescending(m => m.Rating);
 
 
+            var query3 = from movie in movies
+                         where movie.Year > 2000
+                         orderby movie.Rating descending
+                         select movie;
+
             Console.WriteLine(query2.Count());
           
 
