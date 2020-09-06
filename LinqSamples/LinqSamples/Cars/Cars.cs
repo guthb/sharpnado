@@ -16,7 +16,7 @@ namespace Cars
         public int Combined { get; set; }
 
 
-        private static Car ParseFromCsv(string line)
+        public static Car ParseFromCsv(string line)
         {
             var columns = line.Split(',');
 
