@@ -19,6 +19,7 @@ namespace Cars
             }
         }
 
+        //extention method syntax
         private static List<Car> ProcessFile(string path)
         {
             return
@@ -28,6 +29,18 @@ namespace Cars
                 .Select(Car.ParseFromCsv)
                 .ToList();
 
+        }
+
+        //query syntax
+        private static List<Car> ProcessFile2(string path)
+        {
+            var query =
+            from line in File.ReadAllLines(path).Skip(1)
+            where line.Length > 1
+            select Car.ParseFromCsv(line);
+
+
+            return query.ToList();
         }
 
     }
