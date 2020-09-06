@@ -15,8 +15,14 @@ namespace Cars
 
         private static List<Car> ProcessFile(string path)
         {
-            throw new NotImplementedException();
+            File.ReadAllLines(path)
+                .Skip(1)
+                .Where(line => line.Length > 1)
+                .Select(Car.ParseFromCsv)
+
         }
+
+        
 
 
     }
