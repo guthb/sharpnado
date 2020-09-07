@@ -16,8 +16,19 @@ namespace Cars
             var query = cars.OrderByDescending(c => c.Combined)
                             .ThenBy(c => c.Name);
 
-
             foreach (var car in query.Take(10))
+            {
+                Console.WriteLine($"{car.Name} : {car.Combined}");
+            }
+
+
+            var query2 =
+                from car in cars
+                orderby car.Combined ascending, car.Name ascending
+                select car;
+
+
+            foreach (var car in query2.Take(10))
             {
                 Console.WriteLine($"{car.Name} : {car.Combined}");
             }
