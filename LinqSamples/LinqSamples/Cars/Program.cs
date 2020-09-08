@@ -21,7 +21,6 @@ namespace Cars
                 Console.WriteLine($"{car.Name} : {car.Combined}");
             }
 
-
             var query2 =
                 (from car in cars
                  where car.Manufacturer == "BMW" && car.Year == 2016
@@ -34,6 +33,14 @@ namespace Cars
                     .ThenBy(c => c.Name)
                     .Select(c => c)
                     .First();
+
+            var top2 =
+                cars
+                    .OrderByDescending(c => c.Combined)
+                    .ThenBy(c => c.Name)
+                    .Select(c => c)
+                    .First(c => c.Manufacturer == "BMW" && c.Year == 2016);
+
 
             Console.Write(top.Name);
 
