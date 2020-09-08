@@ -23,10 +23,10 @@ namespace Cars
 
 
             var query2 =
-                from car in cars
-                where car.Manufacturer == "BMW" && car.Year == 2016
-                orderby car.Combined descending, car.Name ascending
-                select car;
+                (from car in cars
+                 where car.Manufacturer == "BMW" && car.Year == 2016
+                 orderby car.Combined descending, car.Name ascending
+                 select car).First();
 
             var top =
                 cars.Where(c => c.Manufacturer == "BMW" && c.Year == 2016)
