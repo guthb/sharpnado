@@ -16,6 +16,7 @@ namespace Cars
             var query = cars.OrderByDescending(c => c.Combined)
                             .ThenBy(c => c.Name);
 
+
             foreach (var car in query.Take(10))
             {
                 Console.WriteLine($"{car.Name} : {car.Combined}");
@@ -40,6 +41,17 @@ namespace Cars
                     .ThenBy(c => c.Name)
                     .Select(c => c)
                     .First(c => c.Manufacturer == "BMW" && c.Year == 2016);
+
+            var query3 =
+                from car in cars
+                where car.Manufacturer == "BMW" && car.Year == 2016
+                orderby car.Combined descending, car.Name ascending
+                select new
+                {
+                    car.Manufacturer,
+                    car.Name,
+                    car.Combined
+                };
 
 
             Console.Write(top.Name);
