@@ -71,12 +71,12 @@ namespace Cars
 
             var result4 =
                 cars
-                .Select(c => c.Name );
+                .SelectMany(c => c.Name );
             foreach (var name in result4)
             {
 
                 Console.WriteLine(name);
-                foreach (var character in name)
+                foreach (var character in result)
                 {
                     Console.WriteLine(character);
                 }
