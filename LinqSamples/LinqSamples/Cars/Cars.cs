@@ -16,22 +16,22 @@ namespace Cars
         public int Combined { get; set; }
 
 
-        public static Car ParseFromCsv(string line)
-        {
-            var columns = line.Split(',');
+        //public static Car ParseFromCsv(string line)
+        //{
+        //    var columns = line.Split(',');
 
-            return new Car
-            {
-                Year = int.Parse(columns[0]),
-                Manufacturer = columns[1],
-                Name = columns[2],
-                Displacement = double.Parse(columns[3]),
-                Cylinders = int.Parse(columns[4]),
-                City = int.Parse(columns[4]),
-                Highway = int.Parse(columns[4]),
-                Combined = int.Parse(columns[7])
-            };
-        }
+        //    return new Car
+        //    {
+        //        Year = int.Parse(columns[0]),
+        //        Manufacturer = columns[1],
+        //        Name = columns[2],
+        //        Displacement = double.Parse(columns[3]),
+        //        Cylinders = int.Parse(columns[4]),
+        //        City = int.Parse(columns[4]),
+        //        Highway = int.Parse(columns[4]),
+        //        Combined = int.Parse(columns[7])
+        //    };
+        //}
     }
 
     

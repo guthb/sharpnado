@@ -48,6 +48,13 @@ namespace Cars
             {
                 Console.WriteLine($"{car.Name} : {car.Combined}");
             }
+
+
+            var result = cars.Any(c => c.Manufacturer == "Ford");
+            var result2 = cars.All(c => c.Manufacturer == "Ford");
+
+            Console.WriteLine(result);
+
         }
 
         //extention method syntax
@@ -66,13 +73,44 @@ namespace Cars
         private static List<Car> ProcessFile2(string path)
         {
             var query =
-            from line in File.ReadAllLines(path).Skip(1)
-            where line.Length > 1
-            select Car.ParseFromCsv(line);
+
+                File.ReadAllLines(path)
+                .Skip(1)
+                .Where(l => l.Length > 1)
+                .ToCar();
+                //.Select(l => Car.ParseFromCsv(l));
+
+
+            //from line in File.ReadAllLines(path).Skip(1)
+            //where line.Length > 1
+            //select Car.ParseFromCsv(line);
 
 
             return query.ToList();
         }
-
     }
+
+    public static class CarExtentions
+    {
+        public static IEnumerable<Car> ToCar(this IEnumerable<string> source)
+        {
+            foreach (var line in source)
+            {
+                var columns = line.Split(',');
+
+                yield return new Car
+                {
+                    Year = int.Parse(columns[0]),
+                    Manufacturer = columns[1],
+                    Name = columns[2],
+                    Displacement = double.Parse(columns[3]),
+                    Cylinders = int.Parse(columns[4]),
+                    City = int.Parse(columns[4]),
+                    Highway = int.Parse(columns[4]),
+                    Combined = int.Parse(columns[7])
+                };
+            } 
+        }
+    }
+        
 }
