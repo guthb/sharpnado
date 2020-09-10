@@ -42,16 +42,16 @@ namespace Cars
                     .Select(c => c)
                     .First(c => c.Manufacturer == "BMW" && c.Year == 2016);
 
-            var query3 =
-                from car in cars
-                where car.Manufacturer == "BMW" && car.Year == 2016
-                orderby car.Combined descending, car.Name ascending
-                select new
-                {
-                    car.Manufacturer,
-                    car.Name,
-                    car.Combined
-                };
+            cars.Where(c => c.Manufacturer == "BMW" && c.Year == 2016)
+                    .OrderByDescending(c => c.Combined)
+                    .ThenBy(c => c.Name)
+                    .Select(c => c)
+                    .First();
+
+            var result2 =
+                cars
+                .Select(c => new { c.Manufacturer, c.Name, c.Combined });
+           
 
 
             Console.Write(top.Name);
