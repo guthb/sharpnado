@@ -48,7 +48,7 @@ namespace Cars
                     .Select(c => c)
                     .First();
 
-            var result2 =
+            var result =
                 cars
                 .Select(c => new { c.Manufacturer, c.Name, c.Combined });
            
@@ -62,10 +62,27 @@ namespace Cars
             }
 
 
-            var result = cars.Any(c => c.Manufacturer == "Ford");
-            var result2 = cars.All(c => c.Manufacturer == "Ford");
+            var result2 = cars.Any(c => c.Manufacturer == "Ford");
+            Console.WriteLine(result2);
 
-            Console.WriteLine(result);
+            var result3 = cars.All(c => c.Manufacturer == "Ford");
+
+            Console.WriteLine(result3);
+
+            var result4 =
+                cars
+                .Select(c => c.Name );
+            foreach (var name in result4)
+            {
+
+                Console.WriteLine(name);
+                foreach (var character in name)
+                {
+                    Console.WriteLine(character);
+                }
+            }
+
+
 
         }
 
