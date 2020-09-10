@@ -71,7 +71,8 @@ namespace Cars
 
             var result4 =
                 cars
-                .SelectMany(c => c.Name );
+                .SelectMany(c => c.Name)
+                .OrderBy(c => c);
             foreach (var name in result4)
             {
 
