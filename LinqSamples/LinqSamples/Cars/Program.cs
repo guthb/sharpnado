@@ -52,8 +52,6 @@ namespace Cars
                 cars
                 .Select(c => new { c.Manufacturer, c.Name, c.Combined });
            
-
-
             Console.Write(top.Name);
 
             foreach (var car in query.Take(10))
