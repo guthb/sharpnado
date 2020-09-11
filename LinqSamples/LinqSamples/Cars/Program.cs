@@ -12,10 +12,21 @@ namespace Cars
         static void Main(string[] args)
         {
             var cars = ProcessFile("fuel.csv");
+            var manufacturers = ProcessManufacturers("manufactures.csv");
 
             var query = cars.OrderByDescending(c => c.Combined)
                             .ThenBy(c => c.Name);
 
+            var query5 =
+                from car in cars
+                where car.Manufacturer == "Bmw" && car.Year == 2016
+                orderby car.Combined descending, car.Name ascending
+                select new
+                {
+                    car.Manufacturer,
+                    car.Name,
+                    car.Combined
+                };
 
             foreach (var car in query.Take(10))
             {
@@ -85,6 +96,28 @@ namespace Cars
 
         }
 
+        
+
+    private static List<Manufacturer> ProcessManufacturers(string path)
+    {
+        var query =
+            File.ReadAllLines(path)
+                .Where(l => l.Length > 1)
+                .Select(l =>
+                {
+
+                    var columns = l.Split(',');
+                    return new Manufacturer
+                    {
+                        Name = columns[0],
+                        Headquarters = columns[1],
+                        Year = int.Parse(columns[2])
+                    };
+
+                });
+        return query.ToList();
+
+    }
         //extention method syntax
         private static List<Car> ProcessFile(string path)
         {
@@ -140,5 +173,8 @@ namespace Cars
             } 
         }
     }
-        
+
+
+
+
 }
