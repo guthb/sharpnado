@@ -28,10 +28,30 @@ namespace Cars
                     car.Combined
                 };
 
+            var query6 =
+                from car in cars
+                join manufacturer in manufacturers
+                on car.Manufacturer equals manufacturer.Name
+                orderby car.Combined descending, car.Name ascending
+                select new CarSummary
+
+                {
+                    manufacturer.Headquarters,
+                    car.Name,
+                    car.Combined
+                };
+
             foreach (var car in query.Take(10))
             {
                 Console.WriteLine($"{car.Name} : {car.Combined}");
             }
+
+            foreach (var car in query6.Take(10))
+            {
+                Console.WriteLine($"{car.Headquarters} : {car.Name} : {car.Combined}");
+            }
+
+
 
             var query2 =
                 (from car in cars
