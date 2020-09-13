@@ -45,12 +45,14 @@ namespace Cars
             var query7 =
                 cars.Join(manufacturers,
                             c => c.Manufacturer,
-                            m => m.Name, (c,m) => new
+                            m => m.Name, (c, m) => new
                             {
                                 m.Headquarters,
                                 c.Name,
                                 c.Combined
-                            });
+                            })
+            .OrderByDescending(c => c.Combined)
+            .ThenBy(c => c.Name);
 
             foreach (var car in query.Take(10))
             {
