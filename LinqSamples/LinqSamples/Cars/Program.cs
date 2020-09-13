@@ -33,13 +33,24 @@ namespace Cars
                 join manufacturer in manufacturers
                 on car.Manufacturer equals manufacturer.Name
                 orderby car.Combined descending, car.Name ascending
-                select new CarSummary
+                select new
 
                 {
                     manufacturer.Headquarters,
                     car.Name,
                     car.Combined
                 };
+
+
+            var query7 =
+                cars.Join(manufacturers,
+                            c => c.Manufacturer,
+                            m => m.Name, (c,m) => new
+                            {
+                                m.Headquarters,
+                                c.Name,
+                                c.Combined
+                            });
 
             foreach (var car in query.Take(10))
             {
@@ -50,8 +61,6 @@ namespace Cars
             {
                 Console.WriteLine($"{car.Headquarters} : {car.Name} : {car.Combined}");
             }
-
-
 
             var query2 =
                 (from car in cars
