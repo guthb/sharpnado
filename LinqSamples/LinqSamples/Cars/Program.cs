@@ -43,6 +43,17 @@ namespace Cars
                     car.Combined
                 };
 
+            var query8 =
+                cars.Join(manufacturers,
+                c => new { c.Manufacturer, c.Year },
+                m => new { Manufacturer = m.Name, m.Year },
+                    (c, m) => new
+                    { m.Headquarters,
+                        c.Name,
+                        c.Combined
+                    });
+                
+
 
             var query7 =
                 cars.Join(manufacturers,
