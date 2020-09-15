@@ -14,6 +14,20 @@ namespace Cars
             var cars = ProcessFile("fuel.csv");
             var manufacturers = ProcessManufacturers("manufactures.csv");
 
+
+            //grouping
+            var query10 =
+                from car in cars
+                group car by car.Manufacturer;
+
+            foreach (var result1 in query10)
+            {
+                Console.WriteLine($"{result1.Key} has {result1.Count()} cars");
+            }
+
+
+
+
             var query = cars.OrderByDescending(c => c.Combined)
                             .ThenBy(c => c.Name);
 
