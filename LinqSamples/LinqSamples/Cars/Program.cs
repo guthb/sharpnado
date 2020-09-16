@@ -22,6 +22,11 @@ namespace Cars
                 orderby manufacturer.Key
                 select manufacturer;
 
+            //extention syntax
+            var query11 =
+                cars.GroupBy(c => c.Manufacturer.ToUpper())
+                .OrderBy(g => g.Key);
+
 
             foreach (var result1 in query10)
             {
