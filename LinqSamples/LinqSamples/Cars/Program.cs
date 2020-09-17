@@ -44,6 +44,38 @@ namespace Cars
  
             }
 
+            var query12 =
+                from manufacturer in manufacturers
+                join car in cars on manufacturer.Name equals car.Manufacturer
+                into carGroup
+                orderby manufacturer.Name
+                select new
+                {
+                    Manufacturer = manufacturer,
+                    Cars = carGroup
+                };
+
+            var query13 =
+                manufacturers.GroupJoin(cars, m => m.Name, c => c.Manufacturer, (m, g) =>
+                new
+                {
+                    Manufacturer = m,
+                    Cars = g
+                })
+                .OrderBy(m => m.Manufacturer.Name);
+
+
+                foreach (var group in query12)
+            {
+
+                Console.WriteLine($"{group.Manufacturer.Name}:{group.Manufacturer.Headquarters}");
+                foreach (var car in group.Cars.OrderByDescending(c => c.Combined).Take(2))
+                {
+                    Console.WriteLine($"\t{car.Name}: { car.Combined}");
+                }
+
+            }
+
 
 
 
