@@ -64,7 +64,6 @@ namespace Cars
                 })
                 .OrderBy(m => m.Manufacturer.Name);
 
-
                 foreach (var group in query12)
             {
 
@@ -76,8 +75,30 @@ namespace Cars
 
             }
 
+            var query14 =
+            from manufacturer in manufacturers
+            join car in cars on manufacturer.Name equals car.Manufacturer
+                into carGroup
+            select new
+            {
+                Manufacturer = manufacturer,
+                Cars = carGroup
+            } into result5
+            group result5 by result5.Manufacturer.Headquarters;
 
 
+            foreach (var group in query14)
+            {
+
+                Console.WriteLine($"{group.Key}");
+                foreach (var car in group.SelectMany(g => g.Cars)
+                    .OrderByDescending(c => c.Combined)
+                    .Take(3))
+                {
+                    Console.WriteLine($"\t{car.Name}: { car.Combined}");
+                }
+
+            }
 
             var query = cars.OrderByDescending(c => c.Combined)
                             .ThenBy(c => c.Name);
