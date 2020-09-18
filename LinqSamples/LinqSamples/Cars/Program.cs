@@ -86,6 +86,15 @@ namespace Cars
             } into result5
             group result5 by result5.Manufacturer.Headquarters;
 
+            var query15 =
+                manufacturers.GroupJoin(cars, m => m.Name, c => c.Manufacturer,
+                (m, g) =>
+                new
+                {
+                    Manufacturer = m,
+                    Cars = g
+                })
+                .GroupBy(m => m.Manufacturer.Headquarters);
 
             foreach (var group in query14)
             {
