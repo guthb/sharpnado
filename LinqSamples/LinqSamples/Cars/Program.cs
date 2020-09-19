@@ -112,6 +112,32 @@ namespace Cars
             var query = cars.OrderByDescending(c => c.Combined)
                             .ThenBy(c => c.Name);
 
+            var query16 =
+                from car in cars
+                group car by car.Manufacturer into carGroup
+                select new
+                {
+                    Name = carGroup.Key,
+                    Max = carGroup.Max(c => c.Combined),
+                    Min = carGroup.Min(c => c.Combined),
+                    Avg = carGroup.Average(c => c.Combined)
+
+                } into result16
+                orderby result16.Max descending
+                select result16;
+
+
+            foreach (var result6 in query16)
+            {
+
+                Console.WriteLine($"{result6.Name}");
+                Console.WriteLine($"{result6.Max}");
+                Console.WriteLine($"{result6.Min}");
+                Console.WriteLine($"{result6.Avg}");
+
+
+            }
+
             var query5 =
                 from car in cars
                 where car.Manufacturer == "Bmw" && car.Year == 2016
