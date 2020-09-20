@@ -142,16 +142,33 @@ namespace Cars
                 cars.GroupBy(c => c.Manufacturer)
                 .Select(g =>
                 {
-                    var results17 = g.Aggregate(new CarStatistics(),
+                    var results = g.Aggregate(new CarStatistics(),
                                         (acc, c) => acc.Accumulate(c),
                                         acc => acc.Compute());
 
                     return new
                     {
-                        Name = g.Key
+                        Name = g.Key,
+                        Avg = results.Average,
+                        Min = results.Min,
+                        Max = results.Max,
+
+
                     };
 
-                });
+                })
+                .OrderByDescending(r => r.Max);
+
+            foreach(var result17 in query16)
+            {
+
+                Console.WriteLine($"{result17.Name}");
+                Console.WriteLine($"{result17.Max}");
+                Console.WriteLine($"{result17.Min}");
+                Console.WriteLine($"{result17.Avg}");
+
+
+            }
 
             var query5 =
                 from car in cars
