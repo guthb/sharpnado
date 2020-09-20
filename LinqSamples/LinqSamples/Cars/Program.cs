@@ -143,10 +143,12 @@ namespace Cars
                 .Select(g =>
                 {
                     var results17 = g.Aggregate(new CarStatistics(),
-                       (acc, c) =>  acc.Accumulate(c)
+                                        (acc, c) => acc.Accumulate(c),
+                                        acc => acc.Compute());
+
                     return new
                     {
-
+                        Name = g.Key
                     };
 
                 });
@@ -366,10 +368,16 @@ namespace Cars
             Count += 1;
             Total += car.Combined;
             Max = Math.Max(Max, car.Combined);
-            Min = Math.Min(Min, car.Combined)
+            Min = Math.Min(Min, car.Combined);
 
             return this;
 
+        }
+
+        public CarStatistics Compute()
+        {
+            Average = Total / Count;
+            return this;
         }
 
         public int Max { get; set; }
