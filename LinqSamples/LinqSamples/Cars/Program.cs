@@ -138,6 +138,19 @@ namespace Cars
 
             }
 
+            var query17 =
+                cars.GroupBy(c => c.Manufacturer)
+                .Select(g =>
+                {
+                    var results17 = g.Aggregate(new CarStatistics(),
+                        )
+                    return new
+                    {
+
+                    };
+
+                });
+
             var query5 =
                 from car in cars
                 where car.Manufacturer == "Bmw" && car.Year == 2016
@@ -337,6 +350,14 @@ namespace Cars
                 };
             } 
         }
+    }
+
+    public class CarStatistics
+    {
+        public int Max { get; set; }
+        public int Min { get; set; }
+        public double Average { get; set; }
+        
     }
 
 
