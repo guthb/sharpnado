@@ -143,7 +143,7 @@ namespace Cars
                 .Select(g =>
                 {
                     var results17 = g.Aggregate(new CarStatistics(),
-                        )
+                       (acc, c) =>  acc.Accumulate(c)
                     return new
                     {
 
@@ -354,10 +354,19 @@ namespace Cars
 
     public class CarStatistics
     {
+       
+        
+        public CarStatistics Accumulate(Car c)
+        {
+            Total += car.Combined;
+            return this;
+
+        }
+
         public int Max { get; set; }
         public int Min { get; set; }
+        public int Total { get; set; }
         public double Average { get; set; }
-        
     }
 
 
