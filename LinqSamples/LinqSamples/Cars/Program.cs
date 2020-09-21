@@ -26,6 +26,9 @@ namespace Cars
                 var name = new XElement("Name", record.Name);
                 var combined = new XElement("Combined", record.Combined);
 
+                car.Add(name);
+                car.Add(combined);
+
                 cars1.Add(car);
             }
 
