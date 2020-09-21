@@ -15,6 +15,22 @@ namespace Cars
             var cars = ProcessFile("fuel.csv");
             var manufacturers = ProcessManufacturers("manufactures.csv");
 
+            var records = ProcessFile("fuel.csv");
+
+            var document = new XDocument();
+            var cars1 = new XElement("Cars");
+
+            foreach (var record in records)
+            {
+                var car = new XElement("Car");
+                var name = new XElement("Name", record.Name);
+                var combined = new XElement("Combined", record.Combined);
+
+                cars1.Add(car);
+            }
+
+            document.Add(cars);
+            document.Save("fuel.xml");
 
             //grouping
             var query10 =
