@@ -325,15 +325,26 @@ namespace Cars
                 where element.Attribute("Manufacturer").Value == "BMW"
                 select element.Attribute("Name").Value;
 
-            foreach (var name in collection)
+            foreach (var name in query)
             {
-
+                Console.WriteLine(name);
             }
         }
 
         private static void createXml()
         {
-            throw new NotImplementedException();
+            var records = ProcessFile("fuel.csv");
+
+            var document = new XDocument();
+            var cars = new XElement("Cars",
+
+                from record in records
+                select new XElement("Car",
+                        new XAttribute("Name", record.Name),
+                        new XAttribute("Combined", record.Combined),
+                        new XAttribute("Manufacturer", record.Manufacturer))
+
+                );
         }
 
         private static List<Manufacturer> ProcessManufacturers(string path)
