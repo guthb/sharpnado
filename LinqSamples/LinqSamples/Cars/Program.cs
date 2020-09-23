@@ -336,11 +336,12 @@ namespace Cars
         {
             var records = ProcessFile("fuel.csv");
 
+            var ns = (XNamespace)"http://somecoolwebsite/neatstuff/awesomstuff";
             var document = new XDocument();
-            var cars = new XElement("Cars",
+            var cars = new XElement(ns + "Cars",
 
                 from record in records
-                select new XElement("Car",
+                select new XElement(ns + "Car",
                         new XAttribute("Name", record.Name),
                         new XAttribute("Combined", record.Combined),
                         new XAttribute("Manufacturer", record.Manufacturer))
