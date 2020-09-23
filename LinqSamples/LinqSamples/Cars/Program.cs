@@ -20,6 +20,9 @@ namespace Cars
             var document = new XDocument();
             var cars1 = new XElement("Cars");
 
+            createXml();
+            QueryXml();
+
             foreach (var record in records)
             {
                 var car = new XElement("Car");
@@ -313,9 +316,27 @@ namespace Cars
 
         }
 
-        
+        private static void QueryXml()
+        {
+            var document = XDocument.Load("fuel.xml");
 
-    private static List<Manufacturer> ProcessManufacturers(string path)
+            var query =
+                from element in document.Element("Cars").Elements("Car")
+                where element.Attribute("Manufacturer").Value == "BMW"
+                select element.Attribute("Name").Value;
+
+            foreach (var name in collection)
+            {
+
+            }
+        }
+
+        private static void createXml()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static List<Manufacturer> ProcessManufacturers(string path)
     {
         var query =
             File.ReadAllLines(path)
