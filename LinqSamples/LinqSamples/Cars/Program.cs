@@ -322,7 +322,8 @@ namespace Cars
 
             var query =
                 from element in document.Element("Cars").Elements("Car")
-                where element.Attribute("Manufacturer").Value == "BMW"
+                //where element.Attribute("Manufacturer").Value == "BMW"
+                where element.Attribute("Manufacturer2")?.Value == "BMW"
                 select element.Attribute("Name").Value;
 
             foreach (var name in query)
@@ -343,6 +344,7 @@ namespace Cars
                         new XAttribute("Name", record.Name),
                         new XAttribute("Combined", record.Combined),
                         new XAttribute("Manufacturer", record.Manufacturer))
+
 
                 );
         }
