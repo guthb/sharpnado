@@ -318,10 +318,13 @@ namespace Cars
 
         private static void QueryXml()
         {
+
+            var ns = (XNamespace)"http://somecoolwebsite/neatstuff/awesomstuff";
+            var ex = (XNamespace)"http://somecoolwebsite/neatstuff/awesomstuff/ex";
             var document = XDocument.Load("fuel.xml");
 
             var query =
-                from element in document.Element("Cars").Elements("Car")
+                from element in document.Element(ns+ "Cars").Elements(ex + "Car")
                 //where element.Attribute("Manufacturer").Value == "BMW"
                 where element.Attribute("Manufacturer2")?.Value == "BMW"
                 select element.Attribute("Name").Value;
