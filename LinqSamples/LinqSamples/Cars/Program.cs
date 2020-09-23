@@ -324,8 +324,8 @@ namespace Cars
             var document = XDocument.Load("fuel.xml");
 
             var query =
-                from element in document.Element(ns+ "Cars").Elements(ex + "Car")
-                //where element.Attribute("Manufacturer").Value == "BMW"
+                from element in document.Element(ns+ "Cars").Elements(ex + "Car") ?? Enumerable.Empty<XElement>()
+                    //where element.Attribute("Manufacturer").Value == "BMW"
                 where element.Attribute("Manufacturer2")?.Value == "BMW"
                 select element.Attribute("Name").Value;
 
