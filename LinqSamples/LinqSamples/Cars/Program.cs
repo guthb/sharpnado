@@ -312,8 +312,6 @@ namespace Cars
                 }
             }
 
-
-
         }
 
         private static void QueryXml()
