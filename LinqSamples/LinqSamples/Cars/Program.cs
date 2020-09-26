@@ -23,6 +23,7 @@ namespace Cars
             createXml();
             QueryXml();
 
+
             foreach (var record in records)
             {
                 var car = new XElement("Car");
@@ -353,7 +354,7 @@ namespace Cars
         }
 
         private static List<Manufacturer> ProcessManufacturers(string path)
-    {
+        {
         var query =
             File.ReadAllLines(path)
                 .Where(l => l.Length > 1)
@@ -371,7 +372,7 @@ namespace Cars
                 });
         return query.ToList();
 
-    }
+        }
         //extention method syntax
         private static List<Car> ProcessFile(string path)
         {
@@ -403,6 +404,20 @@ namespace Cars
 
             return query.ToList();
         }
+
+        private static void QueryData()
+        {
+
+        }
+
+
+        private static void InsertData()
+        {
+            var cars = ProcessFile("fuel.csv");
+                var db = new CarDb();
+        }
+
+
     }
 
     public static class CarExtentions
