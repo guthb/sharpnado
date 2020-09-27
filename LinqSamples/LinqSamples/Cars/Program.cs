@@ -427,6 +427,14 @@ namespace Cars
             {
                 Console.WriteLine($"{ car.Name}: {car.Combined}");
             }
+
+            var extentionQuery =
+                    db.Cars.OrderByDescending(c => c.Combined).ThenBy(c => c.Name).Take(10);
+
+            foreach (var car in extentionQuery)
+            {
+                Console.WriteLine($"{ car.Name}: {car.Combined}");
+            }
         }
 
 
