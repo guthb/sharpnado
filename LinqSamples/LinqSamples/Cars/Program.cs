@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cars
 {
@@ -22,6 +23,11 @@ namespace Cars
 
             createXml();
             QueryXml();
+
+            //Database.SetIntializer(new DropCreateDatabaseIfModelChanges<CarDb>());  this is EF what is the Core equalent?
+
+            InsertData();
+            QueryData();
 
 
             foreach (var record in records)
@@ -414,7 +420,18 @@ namespace Cars
         private static void InsertData()
         {
             var cars = ProcessFile("fuel.csv");
-                var db = new CarDb();
+            var db = new CarDb();
+
+            if (!db.Cars.Any())
+            {
+                foreach (var car in cars)
+                {
+                    db.Cars.Add(car);
+
+                }
+                db.SaveChanges();
+            }
+
         }
 
 
