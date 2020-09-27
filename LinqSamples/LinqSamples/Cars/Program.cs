@@ -416,12 +416,14 @@ namespace Cars
         {
             var db = new CarDb();
 
+            //db.Database.Log = Console.WriteLine;  not a method on dotnet core
+
             var query = from car in db.Cars
                         orderby car.Combined descending, car.Name ascending
                         select car;
 
 
-            foreach (var car in query)
+            foreach (var car in query.Take(10))
             {
                 Console.WriteLine($"{ car.Name}: {car.Combined}");
             }
@@ -432,6 +434,8 @@ namespace Cars
         {
             var cars = ProcessFile("fuel.csv");
             var db = new CarDb();
+
+            //db.Database.Log = Console.WriteLine;  not a method on dotnet core
 
             if (!db.Cars.Any())
             {
